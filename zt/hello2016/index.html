@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2016年味浓</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+html,body{height:100%;background-color:#ce3838}html,body,div{margin:0;padding:0;overflow:hidden}.fp-section{position:relative;box-sizing:border-box;height:100%}.fp-section.fp-table{display:table;table-layout:fixed;width:100%}#container{position:relative}.loader{display:-webkit-box;display:-moz-box;display:box;-webkit-box-pack:center;-moz-box-pack:center;-webkit-box-align:center;-moz-box-align:center;position:absolute;top:0;left:0;z-index:5;width:100%;height:100%;background-color:#ce3838}.message{font:28px bold "Helvetica","Verdana","Tahoma"}@keyframes run{0%{background-position:0 bottom}100%{background-position:125% bottom}}@-webkit-keyframes run{0%{background-position:0 bottom}100%{background-position:125% bottom}}@-o-keyframes run{0%{background-position:0 bottom}100%{background-position:125% bottom}}@-moz-keyframes run{0%{background-position:0 bottom}100%{background-position:125% bottom}}.animBox{display:none;position:relative;height:100%}.clip{position:absolute;background-position:0 bottom;background-repeat:no-repeat;background-size:500%}.anim{animation-name:run;animation-timing-function:steps(5);animation-iteration-count:infinite;-webkit-animation-name:run;-webkit-animation-timing-function:steps(5);-webkit-animation-iteration-count:infinite;-o-animation-name:run;-o-animation-timing-function:steps(5);-o-animation-iteration-count:infinite;-moz-animation-name:run;-moz-animation-timing-function:steps(5);-moz-animation-iteration-count:infinite}.anim.t600{animation-duration:600ms;-webkit-animation-duration:600ms;-o-animation-duration:600ms;-moz-animation-duration:600ms}.anim.t500{animation-duration:500ms;-webkit-animation-duration:500ms;-o-animation-duration:500ms;-moz-animation-duration:500ms}.anim.t800{animation-duration:800ms;-webkit-animation-duration:800ms;-o-animation-duration:800ms;-moz-animation-duration:800ms}.anim.t1000{animation-duration:1000ms;-webkit-animation-duration:1000ms;-o-animation-duration:1000ms;-moz-animation-duration:1000ms}.anim.t1k{animation-duration:1s;-webkit-animation-duration:1s;-o-animation-duration:1s;-moz-animation-duration:1s}.full{left:0;top:0;width:100%;height:100%;background-repeat:no-repeat;background-size:100% auto}#anime1 .bg{background-image:url(asset/a1_bg.jpg);background-position:center top;position:absolute}#anime1 .p1{top:0;right:0;width:50%;height:100%;background-position:0 bottom;background-repeat:no-repeat;background-size:500%;background-image:url(asset/a1_p1.png)}#anime1 .p2{top:6%;left:2%;width:63%;height:100%;background-position:0 bottom;background-repeat:no-repeat;background-size:500%;background-image:url(asset/a1_p2.png)}#anime3 .bg{background-image:url(asset/a3_bg.jpg);background-position:center top;position:absolute}#anime3 .p1{top:0;right:0;width:36%;height:36%;background-position:0 bottom;background-repeat:no-repeat;background-size:500%;background-image:url(asset/a3_p1.png)}#anime3 .p2{top:6%;left:0;width:100%;height:100%;background-position:0 bottom;background-repeat:no-repeat;background-size:500%;background-image:url(asset/a3_p2.png?09)}#anime4 .bg{background-image:url(asset/a4_bg.jpg);background-position:0 bottom;background-repeat:no-repeat;background-size:500%;position:absolute}#anime2{background-color:#fff}#anime2 .child{right:0;bottom:0;width:63%;height:100%;background-image:url('asset/child.png');z-index:5}#anime2 .grandpa{right:0;top:-40%;width:42%;height:100%;background-image:url('asset/grandpa.png')}#anime2 .mom{left:-1%;top:-40%;width:42%;height:100%;background-image:url('asset/mom.png')}#anime2 .bg{position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-size:100% 100%}#anime2 .bg1-1{background-image:url(asset/bg1.png)}#anime2 .bg1-2{background-image:url(asset/bg2.png);z-index:3}#anime5 .cloth{width:100%;height:100%;background-image:url(asset/cloth.jpg)}#anime6 .party{width:100%;height:100%;background-image:url(asset/party.jpg)}#anime7 .lantern{width:100%;height:100%;background-image:url(asset/lantern.jpg)}#anime8 .tuye{left:0;top:0;width:100%;height:100%;background-image:url(asset/tuye.png)}#anime8,#anime-book{position:absolute}#anime8{top:20%;left:26%;width:40%;height:38%}#anime-book{opacity:0;z-index:-1;top:0;perspective:500;-webkit-perspective:500;background-size:100% 100%;width:100%;height:100%;background-image:url(asset/book_open.jpg)}#anime-book .page{position:absolute;top:6%;left:4%;width:89%;height:65%;transform:rotateY(-180deg);transform-style:preserve-3d;transform-origin:0 50%;-webkit-transform:rotateY(-180deg);-webkit-transform-style:preserve-3d;-webkit-transform-origin:0 50%}#anime-book .front,#anime-book .back{position:absolute;width:100%;height:100%;background-size:100% 100%;backface-visibility:hidden;-webkit-backface-visibility:hidden}#anime-book .front{z-index:1;background-image:url(asset/book-cover.png)}#anime-book .back{z-index:0;transform:rotateY(180deg);-webkit-transform:rotateY(180deg);background-color:pink}
+#anime-start{background-image:url(asset/face.jpg);background-size:100% 100%}#anime-start,#anime-end{position:absolute;top:0;width:100%}#anime-start .text,#anime-end .text{position:absolute;top:6%;width:50px;height:0;background-size:100%;background-repeat:no-repeat}#imgcopy{visibility:hidden}#anime-start .text1{right:15%;background-image:url(asset/text1.png)}#anime-start .text2{right:30%;background-image:url(asset/text2.png)}#anime-start .text3{right:45%;background-image:url(asset/text3.png)}#anime-start .text4{right:60%;background-image:url(asset/text4.png)}#anime-start .text5{right:75%;background-image:url(asset/text5.png)}#anime-end .text1{right:20%;background-image:url(asset/text6.png)}#anime-end .text2{right:40%;background-image:url(asset/text7.png)}#anime-end .text3{right:60%;background-image:url(asset/text8.png)}.zoomOut{animation:zoomOut 2s;-webkit-animation:zoomOut 2s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}@keyframes zoomOut{from{transform:scale(1);opacity:1}to{transform:scale(0.5);opacity:0}}@-webkit-keyframes zoomOut{from{-webkit-transform:scale(1);opacity:1}to{-webkit-transform:scale(0.5);opacity:0}}.zoomIn{animation:zoomIn 2s;-webkit-animation:zoomIn 2s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}@keyframes zoomIn{from{transform:scale(0.5);opacity:0}to{transform:scale(1);opacity:1}}@-webkit-keyframes zoomIn{from{-webkit-transform:scale(0.5);opacity:0}to{-webkit-transform:scale(1);opacity:1}}.turn{animation:turn 3s 2s;animation-fill-mode:forwards;-webkit-animation:turn 3s 2s;-webkit-animation-fill-mode:forwards}@keyframes turn{from{transform:rotateY(-180deg)}to{transform:rotateY(0)}}@-webkit-keyframes turn{from{-webkit-transform:rotateY(-180deg)}to{-webkit-transform:rotateY(0)}}.textShow1{animation:textShow 2s;animation-fill-mode:forwards;-webkit-animation:textShow 2s;-webkit-animation-fill-mode:forwards}.textShow2{animation:textShow 2s 1s;animation-fill-mode:forwards;-webkit-animation:textShow 2s 1s;-webkit-animation-fill-mode:forwards}.textShow3{animation:textShow 2s 2s;animation-fill-mode:forwards;-webkit-animation:textShow 2s 2s;-webkit-animation-fill-mode:forwards}.textShow4{animation:textShow 2s 3s;animation-fill-mode:forwards;-webkit-animation:textShow 2s 3s;-webkit-animation-fill-mode:forwards}.textShow5{animation:textShow 2s 4s;animation-fill-mode:forwards;-webkit-animation:textShow 2s 4s;-webkit-animation-fill-mode:forwards}@keyframes textShow{from{height:0}to{height:500px}}@-webkit-keyframes textShow{from{height:0}to{height:500px}}#touchstyle-headphone{box-sizing:border-box;position:fixed;bottom:20px;right:20px;z-index:910;width:32px;height:32px;border:2px solid rgba(255,255,255,0.9);background-color:rgba(0,0,0,.3);background-size:20px 20px;border-radius:16px 16px;cursor:pointer}#touchstyle-headphone>.icon{box-sizing:border-box;margin:4px 0 0 5px;width:18px;height:18px;border:2px solid rgba(255,255,255,0.9);border-radius:50px 50px 0 0;border-bottom:0}#touchstyle-headphone>.icon:before{box-sizing:border-box;position:absolute;content:"";top:14px;left:8px;width:4px;height:8px;background-color:rgba(255,255,255,0.9);border-radius:0 2px 2px 0}#touchstyle-headphone>.icon:after{box-sizing:border-box;position:absolute;content:"";top:14px;left:16px;width:4px;height:8px;background:rgba(255,255,255,0.9);border-radius:2px 0 0 2px}#touchstyle-headphone.playing{-webkit-animation:touchstyle-music-paly-animate 2s linear infinite}@-webkit-keyframes touchstyle-music-paly-animate{from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(360deg)}}
+    </style>
+</head>
+
+<body>
+    <div id="contanier">
+        <div class="fullpage">
+            <div class="section">
+                <div id="anime-start" class="animBox">
+                    <div class="text text1"></div>
+                    <div class="text text2"></div>
+                    <div class="text text3"></div>
+                    <div class="text text4"></div>
+                    <div class="text text5"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="anime1" class="animBox">
+                    <div class="bg full"></div>
+                    <div class="clip p1 anim t1k"></div>
+                    <div class="clip p2 anim t600"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="anime2" class="animBox">
+                    <div class="bg bg1-1"></div>
+                    <div class="bg bg1-2"></div>
+                    <div class="clip child anim t500"></div>
+                    <div class="clip mom anim t800"></div>
+                    <div class="clip grandpa anim t1000"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="anime3" class="animBox">
+                    <div class="bg full"></div>
+                    <div class="clip p1 anim t1k"></div>
+                    <div class="clip p2 anim t1k"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="anime4" class="animBox">
+                    <div class="bg full anim t1k"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="anime5" class="animBox">
+                    <div class="clip cloth anim t800"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="anime6" class="animBox">
+                    <div class="clip party anim t1000"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="anime7" class="animBox">
+                    <div class="clip lantern anim t800"></div>
+                </div>
+                <div id="anime-book">
+                    <div class="page">
+                        <div class="front"></div>
+                        <div class="back"></div>
+                    </div>
+                </div>
+                <div id="anime8" class="animBox">
+                    <div class="clip tuye anim t800"></div>
+                </div>
+                <div id="anime-end">
+                    <canvas id="neon"></canvas>
+                    <img id="imgcopy" src="asset/end.jpg">
+                    <div class="text text1"></div>
+                    <div class="text text2"></div>
+                    <div class="text text3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="message"></div>
+        </div>
+        <div id="touchstyle-headphone" class="playing">
+            <div class="icon"></div>
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/jquery.fullpage.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+document.body.addEventListener("touchmove",function(e){e.preventDefault()});window.requestAnimFrame=(function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(callback){window.setTimeout(callback,1000/60)}})();var $$cvs;var rad=10;var num=300;var size=20;var len=0;var arr=[];var midX;var midY;var msX=document.body.clientWidth/1.98;var msY=document.body.clientHeight/2.1;var w;var h;var genFrame;var openFrameAnim=false;var isAndroid=navigator.userAgent.indexOf("Android")>-1||navigator.userAgent.indexOf("Adr")>-1;var cg=[{r:247,g:75,b:28},{r:196,g:105,b:105},{r:218,g:78,b:81},{r:255,g:252,b:243},{r:255,g:153,b:61},{r:231,g:196,b:70},{r:232,g:66,b:66}];window.onload=function(){var c=document.getElementById("neon");w=c.width=window.innerWidth;h=c.height=window.innerHeight;$$cvs=c.getContext("2d");$$cvs.clearRect(0,0,w,h);midX=c.width/2;midY=c.height/2;rad=c.height;for(var i=0;i<num;i++){arr[i]=new Part()}$$cvs.drawImage(imgcopy,0,0,c.width,c.height);len=h/2;window.addEventListener("load",resize);window.addEventListener("resize",resize,false);genFrame=function(){setInterval(go,45)};window.requestAnimFrame(genFrame)};function resize(){c.width=w=window.innerWidth;c.height=h=window.innerHeight;c.style.position="absolute";c.style.left=(window.innerWidth-w)*0.01+"px";c.style.top=(window.innerHeight-h)*0.01+"px"}function disp(p1,p2){return(p2.z-p1.z)}function go(){if(openFrameAnim&&!isAndroid){$$cvs.globalCompositeOperation="source-over";$$cvs.drawImage(imgcopy,0,0,w,h);$$cvs.globalCompositeOperation="lighter";arr.sort(disp);for(var i=0;i<num;i++){arr[i].upd();arr[i].draw()}}}function genRandom(Min,Max){return Min+Math.round((Max-Min)*Math.random())}var rndCol=function(){var obj=cg[genRandom(1,5)-1];return"rgba("+obj.r+","+obj.g+","+obj.b+","+genRandom(4,9)*0.1+")"};var Part=function(){this.x=0;this.y=0;this.z=0;this.vx=0;this.vy=0;this.dx=Math.random()*Math.PI;this.dy=0;this.phi=Math.random()*Math.PI*2;this.t=Math.random()*Math.PI;if(Math.random()<0.5){this.col=rndCol();this.dir=1}else{this.col=rndCol();this.dir=-1}};Part.prototype.draw=function(){var s=this.scale();var x=w/2+this.x*s;var y=h/2+this.y*s;$$cvs.fillStyle=this.col;$$cvs.shadowBlur=120;$$cvs.shadowColor=this.col;$$cvs.shadowOffsetX=0;$$cvs.shadowOffsetY=0;if(this.z>-rad/2){$$cvs.beginPath();$$cvs.arc(x,y,Math.ceil(size*s),0,Math.PI*2,false);$$cvs.fill()}};Part.prototype.scale=function(){return(len/(len+this.z)+1)};Part.prototype.upd=function(){var m=(w/2-msX)/w/10;this.phi+=(this.dy+m)*this.dir;this.t=this.dx;this.x=rad*Math.sin(this.t)*Math.cos(this.phi);this.y=rad*Math.cos(this.t);this.z=rad*Math.sin(this.t)*Math.sin(this.phi)+rad/2*(h/1.2-msY)/h*4};var $vol=$("#touchstyle-headphone");var audio=new Audio();audio.src="asset/music.mp3";audio.play();audio.loop="loop";$vol.bind("touchstart",function(){var t=$(this);if(t.hasClass("playing")){audio.pause();t.removeClass("playing")}else{t.addClass("playing");audio.play()}});
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://comic.qianlong.com/m/test/WeixinShare/js/weixin_share.js"></script>
+    <script>
+    $.fn.wxshare({
+            title: "2016年味浓",
+            imgUrl: "http://comic.qianlong.com/wx/img/wxshare.jpg",
+            desc: "来自兔爷动漫的新年祝福",
+            audio: "",
+            bdname: "hello2016",
+            bdfunc: "share",
+            bdvalue: "weixin"
+        });
+    </script>
+</body>
+
+</html>

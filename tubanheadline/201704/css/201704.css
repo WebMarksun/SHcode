@@ -1,0 +1,176 @@
+html,
+        body {
+            margin: 0;
+            height: 100%
+        }
+        
+        img {
+            border: 0
+        }
+        
+        img,
+        article {
+            display: block
+        }
+        
+        .cf:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0
+        }
+        
+        .cf {
+            *zoom: 1
+        }
+        
+        .left {
+            float: left
+        }
+        
+        body {
+            background: url(../images/bg.jpg) no-repeat center;
+            background-size: cover;
+            overflow: hidden
+        }
+        
+        header {
+            height: 12%
+        }
+        
+        #hdimg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .pos-a {
+            position: absolute
+        }
+        
+        div.d1 {
+            width: 50%;
+        }
+        
+        div.d2 {
+            width: 50%;
+        }
+        
+        div.d3 {
+            width: 100%;
+        }
+        
+        div.d4 {
+            width: 49%;
+        }
+        div.d5{
+            width:51%;
+        }
+        
+        article {
+            position: relative
+        }
+        
+        #ac1,
+        #ac2,
+        #ac3,
+        #ac4 {
+            height: 100%;
+        }
+        
+        #ac1 .title1 {
+            width:100%;
+            /*height: 58%;*/
+        }
+        
+        #ac1 .title2 {
+            width: 100%;
+            /*height: 42%;*/
+        }
+        
+        #ac2 .title,
+        #ac3 .title,
+        #ac4 .title ,
+        #ac5 .title
+        {
+            width: 100%;
+            /*height: 100%;*/
+        }
+        
+        #vd1 {
+            display: block;
+            position: absolute;
+            background: #000;
+            width: 91%;
+            left: 3%;
+            top: 24%;
+        }
+        
+        div.cvs1 {
+            height: 69%
+        }
+        
+        div.cvs2 {
+            transition: all 500ms;
+            height: 18%
+        }
+        
+        #loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #d8ceb5 url(../images/bg.jpg) no-repeat center;
+            background-size: cover;
+            z-index: 10;
+            overflow: hidden;
+            transition: all 500ms
+        }
+        
+        #loading .inner {
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svgxmlns="http://www.w3.org/2000/svg"viewBox="003232"width="32"height="32"fill="white"><circletransform="translate(80)"cx="0"cy="16"r="0"><animateattributeName="r"values="0;4;0;0"dur="1.2s"repeatCount="indefinite"begin="0"keytimes="0;0.2;0.7;1"keySplines="0.20.20.40.8;0.20.60.40.8;0.20.60.40.8"calcMode="spline"/></circle><circletransform="translate(160)"cx="0"cy="16"r="0"><animateattributeName="r"values="0;4;0;0"dur="1.2s"repeatCount="indefinite"begin="0.3"keytimes="0;0.2;0.7;1"keySplines="0.20.20.40.8;0.20.60.40.8;0.20.60.40.8"calcMode="spline"/></circle><circletransform="translate(240)"cx="0"cy="16"r="0"><animateattributeName="r"values="0;4;0;0"dur="1.2s"repeatCount="indefinite"begin="0.6"keytimes="0;0.2;0.7;1"keySplines="0.20.20.40.8;0.20.60.40.8;0.20.60.40.8"calcMode="spline"/></circle></svg>') no-repeat center;
+            background-size: 20% auto
+        }
+        
+        img,
+        video#vd1,
+        video#vd2,
+        #ac2 .btnplay,
+        #cover {
+            display: none
+        }
+        
+        #cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7)
+        }
+        
+        #cover.active {
+            display: block
+        }
+        
+        #cover img {
+            display: block;
+            margin: 30% auto;
+            width: 90%
+        }
+        
+        body {
+            position: relative;
+            margin: 0 auto;
+            max-width: 640px;
+            overflow: hidden
+        }
+        
+        html {
+            background-color: #333
+        }

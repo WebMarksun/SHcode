@@ -1,0 +1,46 @@
+html {
+   position: relative;
+   font-family: '微软雅黑';
+   height: 100%;
+   overflow: hidden;
+}
+body{
+   height: 100%;
+}
+.warp{
+   width: 15rem;
+   height:100%;
+   margin: 0 auto;
+   background-color: #EAEADD;
+   overflow: hidden;
+}
+.swiper-container {
+   width: 12.96rem;
+   height: 16.1rem;
+   margin-top: 0.7rem;
+}
+.swiper-slide {
+   background-position: center;
+   background-size: cover;
+   width: 12.96rem;
+   height: 16.1rem;
+   border: none !important;
+}
+.c_qhdw{
+   width: 5.12rem;
+   height: 1.28rem;
+   display: block;
+   margin: 0.8rem  auto 0.6rem;
+}
+.c_wyds{
+   width: 4.94rem;
+   height: 1.52rem;
+   display: block;
+   margin:0 auto 0.6rem;
+}
+.index_logo{
+   width:6.06rem;
+   height:1.26rem;
+   display: block;
+   margin:0 auto;
+}

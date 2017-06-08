@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>【情画两会】听习近平说心里话</title>
+	<!--<link rel="stylesheet" href="./css/index.css" />
+	-->
+	<link href="./image/loadingty.png" rel="shortcut icon">
+	<link rel="stylesheet" href="./css/reset.css" />
+	<link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+	<audio loop="loop" autoplay="autoplay" src="./music/bgm.mp3"></audio>
+	<div id='loading'>
+		<img class='tuye' src="./image/loadingty.gif"></div>
+	<div id="fullpage">
+		<!-- 首页 -->
+		<div class="section cover">
+			<img class="common_logo" src="./image/index_title.png" alt="" />
+			<img class="index_people" src="./image/index_people.png" alt="" />
+			<img class="index_tingbg" src="./image/index_tingbg.png" alt="" />
+			<img class="index_ting" src="./image/index_ting.png" alt="" />
+			<img class="index_text" src="./image/index_text.png" alt="" />
+			<img class="wipeup" src="./image/wipeup.png" alt></div>
+		<!-- 第二屏 -->
+		<div class="section second">
+			<img class="common_logo" src="./image/index_title.png" alt>
+			<img class="gif" src alt>
+			<img class="gifnone" src alt style="display:none">
+			<img class="second_xjpshuo" src="./image/xjpshuo.png" alt>
+			<img class="second_textone" src="./image/secondtextone.png" alt>
+			<img class="second_texttwo" src="./image/secondtexttwo.png" alt>
+			<img class="wipeup" src="./image/wipeup.png" alt></div>
+		<!-- 第三屏 -->
+		<div class="section third">
+			<img class="common_logo" src="./image/index_title.png" alt>
+			<img class="gif" src alt>
+			<img class="gifnone" src alt style="display:none">
+			<img class="third_xjpshuo" src="./image/xjpshuo.png" alt>
+			<img class="third_textone" src="./image/thirdtextone.png" alt>
+			<img class="third_texttwo" src="./image/thirdtexttwo.png" alt>
+			<img class="wipeup" src="./image/wipeup.png" alt></div>
+		<!-- 第四屏 -->
+		<div class="section fourth">
+			<img class="common_logo" src="./image/index_title.png" alt>
+			<img class="gif" src alt>
+			<img class="gifnone" src alt style="display:none">
+			<img class="fourth_xjpshuo" src="./image/xjpshuo.png" alt>
+			<img class="fourth_textone" src="./image/fourthtextone.png" alt>
+			<img class="fourth_texttwo" src="./image/fourthtexttwo.png" alt>
+			<img class="wipeup" src="./image/wipeup.png" alt></div>
+		<!-- 第五屏 -->
+		<div class="section fifth">
+			<img class="common_logo" src="./image/index_title.png" alt>
+			<img class="gif" src alt>
+			<img class="gifnone" src alt style="display:none">
+			<img class="fifth_xjpshuo" src="./image/xjpshuo.png" alt>
+			<img class="fifth_textone" src="./image/fifthtextone.png" alt>
+			<img class="fifth_texttwo" src="./image/fifthtexttwo.png" alt>
+			<img class="wipeup" src="./image/wipeup.png" alt></div>
+		<!-- 第六屏 -->
+		<div class="section sixth">
+			<img class="common_logo" src="./image/index_title.png" alt>
+			<img class="gif" src alt>
+			<img class="gifnone" src alt style="display:none">
+			<img class="sixth_xjpshuo" src="./image/xjpshuo.png" alt>
+			<img class="sixth_textone" src="./image/sixthtextone.png" alt>
+			<img class="sixth_texttwo" src="./image/sixthtexttwo.png" alt>
+			<img class="wipeup" src="./image/wipeup.png" alt></div>
+		<!-- 第七屏 -->
+		<div class="section seventh">
+			<img class="common_logo" src="./image/index_title.png" alt>
+			<img class="gif" src alt>
+			<img class="gifnone" src alt style="display:none">
+			<img class="seventh_xjpshuo" src="./image/xjpshuo.png" alt>
+			<img class="seventh_textone" src="./image/seventhtextone.png" alt>
+			<img class="seventh_texttwo" src="./image/seventhtexttwo.png" alt>
+			<img class="wipeup" src="./image/wipeup.png" alt></div>
+		<!-- 第八屏 -->
+		<div class="section eighth">
+			<img class="common_logo" src="./image/index_title.png" alt>
+			<img class="gif" src alt>
+			<img class="gifnone" src alt style="display:none">
+			<img class="eighth_xjpshuo" src="./image/xjpshuo.png" alt>
+			<img class="eighth_textone" src="./image/eighthtextone.png" alt>
+			<img class="eighth_texttwo" src="./image/eighthtexttwo.png" alt>
+			<img class="eighth_logo" src="./image/dibulogo.png" alt></div>
+	</div>
+	<!--音乐按钮-->
+	<img class="music_btn Animate" id="audio_btn" src="./image/music.png" alt=""></body>
+	<script src="./lib/jquery.min.js"></script>
+	<script src="./lib/jquery.fullPage.min.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript">
+	$.ajax({
+		type: "get",
+		async: true,
+		url: "http://www.apptranz.com/wxservice/getsigned.php",
+		dataType: "json",
+		data: {
+			"weburl": window.location.href.split("#")[0]
+		},
+		success: function (json) {
+			wx.config({
+				debug: false,
+				appId: json.appId,
+				timestamp: json.timestamp,
+				nonceStr: json.nonceStr,
+				signature: json.signature,
+				jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
+			});
+		},
+		error: function () {
+			console.log("share successfully");
+		}
+	});
+
+	wx.ready(function () {
+		var obj_co = {
+			title: "【情画两会】听习近平说心里话",
+			link: "http://www.apptranz.com/apps/qinghua/index.html",
+			imgUrl: "http://www.apptranz.com/apps/qinghua/image/wxshare.jpg",
+			success: function () {
+				console.log("share successfully");
+			},
+			cancel: function () { }
+		},
+			obj_co_desc = {
+				desc: "2017全国两会期间，习近平总书记先后来到6个团组。在讲话中，习近平妙语频频。他的话语，生动、朴实、真诚，语中有真意，语中有新意，语中更有深意。我们一起来听听习近平的心里话。"
+			},
+			obj_timeline = $.extend({}, obj_co),
+			obj_appmsg = $.extend({}, obj_co_desc, obj_co),
+			obj_qq = $.extend({}, obj_co_desc, obj_co),
+			obj_wb = $.extend({}, obj_co_desc, obj_co),
+			obj_qzone = $.extend({}, obj_co_desc, obj_co);
+
+		wx.onMenuShareTimeline(obj_timeline);
+		wx.onMenuShareAppMessage(obj_appmsg);
+		wx.onMenuShareQQ(obj_qq);
+		wx.onMenuShareWeibo(obj_wb);
+		wx.onMenuShareQZone(obj_qzone);
+	});
+</script>
+
+</html>

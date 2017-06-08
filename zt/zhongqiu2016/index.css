@@ -1,0 +1,184 @@
+@font-face {
+    font-family: "fzjhsx";
+    src: url(assets/font.ttf);
+}
+
+html {
+    font-family: "fzjhsx";
+    font-weight: lighter;
+    display: none;
+}
+
+body,
+.result {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto !important;
+    overflow: hidden;
+}
+
+.section,
+.result {
+    background-image: url(assets/bg.png);
+    background-size: 100% 100%;
+}
+
+.section.cover {
+    background-image: url(assets/cover.jpg);
+}
+
+.section .gif {
+    margin: 15% 10% 5% 10%;
+    width: 80%;
+}
+
+.section .box {
+    margin: 0 5%;
+    width: 90%;
+    height: 25%;
+    background-image: url(assets/kuang@2x.png);
+    background-size: 100% 100%;
+}
+
+.section .box .title {
+    margin: 0;
+    padding-top: 2%;
+    text-align: center;
+    color: #0c2857;
+}
+
+.section .box .content {
+    margin: 0;
+    padding: 6%;
+    color: #fff;
+    font-size: smaller;
+    line-height: 2em;
+}
+
+.section .pic {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    margin: 0 5%;
+    width: 90%;
+}
+
+.section .txt {
+    position: absolute;
+    top: 23%;
+    left: 0;
+    margin: 0 20%;
+    width: 60%;
+    display: none;
+}
+
+.section .btn {
+    position: absolute;
+    width: 33%;
+}
+
+.section .btn-t {
+    bottom: 18%;
+}
+
+.section .btn-b {
+    bottom: 8%;
+}
+
+.section .btn-l {
+    left: 14%;
+}
+
+.section .btn-r {
+    right: 14%;
+}
+
+.result {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.result .graph {
+    margin: 25% 10% 10% 10%;
+    padding: 0;
+    list-style: none;
+    color: #fff;
+}
+
+.result .graph li {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 45px;
+}
+
+.result .graph .title {
+    position: absolute;
+    right: 0;
+    margin: 0;
+}
+
+.result .graph .num {
+    position: absolute;
+    left: 0;
+    margin: 0;
+}
+
+.result .graph .process {
+    position: absolute;
+    top: 18px;
+    width: 0;
+    height: 10px;
+}
+
+.result .graph .bar {
+    position: absolute;
+    top: 18px;
+    width: 100%;
+    height: 10px;
+}
+
+.result .pic {
+    margin: 0 15%;
+    width: 70%;
+}
+
+.result .logo {
+    position: absolute;
+    bottom: 12%;
+    margin: 0 25%;
+    width: 50%;
+}
+
+.cover .logo {
+    position: absolute;
+    top: 20%;
+    margin: 0 25%;
+    width: 56%;
+}
+
+.cover .title {
+    position: absolute;
+    top: 30%;
+    margin: 0 22%;
+    width: 75%;
+    display: none;
+}
+
+.cover .star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    margin-left: -4%;
+    width: 8%;
+}

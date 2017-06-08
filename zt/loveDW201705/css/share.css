@@ -1,0 +1,129 @@
+html {
+    position: relative;
+    font-family: '微软雅黑';
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    height: 100%;
+}
+.pop{
+    position: fixed;
+    width: 15rem;
+    height: 100%;
+    margin: 0 auto;
+    background-color:black;
+    opacity: 0.8;
+    z-index: 2;
+    display: none;
+}
+.sh_prompt{
+    position:absolute;
+    width:3.7rem;
+    height:11.9rem;
+    right:0.5rem;
+    top:0.2rem;
+}
+.sh_warp{
+    width: 15rem;
+    height: 100%;
+    background-color: #EAEADD;
+    margin: 0 auto -10px;
+}
+.sh_title{
+    height: 3.4rem;
+    line-height: 3.4rem;
+}
+.sh_content{
+    position:relative;
+}
+.sh_btn_group{
+}
+.sh_title_logo{
+    width:5.1rem;
+    height:1.2rem;
+    margin-left:0.8rem;
+}
+.sh_title_qhdw{
+    width:4.6rem;
+    height:1.1rem;
+    margin-left:3.6rem;
+}
+.sh_record_box{
+    height:6.9rem;
+}
+.sh_record_b{
+    width:6rem;
+    height:6rem;
+    position:absolute;
+    top:0.5rem;
+    left:4.5rem;
+    /*animation: recordrotate 2s linear 0.5s infinite;*/
+}
+.sh_record_s{
+    width:4rem;
+    height:4rem;
+    position:absolute;
+    top:1.5rem;
+    left:5.5rem;
+}
+.sh_playing{
+    animation: recordrotate 2s linear 0.5s infinite;
+}
+@keyframes recordrotate
+{
+    0%   {transform: rotate(0deg);}
+    25%  {transform: rotate(90deg);}
+    50%  {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+    /*旋转*/
+}
+.sh_record_axie{
+    width:0.3rem;
+    height:0.3rem;
+    position:absolute;
+    top:3.45rem;
+    left:7.35rem;
+}
+.sh_record_needle{
+    width:5.04rem;
+    height:4.5rem;
+    position:absolute;
+    top:1.55rem;
+    right:1.44rem;
+}
+.sh_poetry_name_box{
+    height:1.4rem;
+    margin-bottom: 0.5rem;
+}
+.sh_poetry_name{
+    color:#507567;
+    font-size: 0.64rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.4rem;
+}
+.sh_voice_btngroup{
+    height: 3rem;
+    text-align: center;
+    padding-bottom: 1.9rem;
+}
+.sh_playbtn,
+.sh_pausebtn{
+    width:1.9rem;
+    height:3rem;
+}
+.sh_pausebtn{
+    display:none;
+}
+.sh_btn_group{
+    text-align: center;
+}
+.sh_share_btn,
+.sh_relay_btn,
+.sh_readagain_btn{
+    margin:0 0.75rem;
+    width:5rem;
+    height:1.5rem;
+}

@@ -1,0 +1,447 @@
+/*公共部分*/
+@font-face {
+    font-family: "fzqtft";
+    /*src: url(assets/font.ttf);*/
+}
+
+html {
+	/*height:100%;*/
+    font-family: "FangSong";
+    font-weight: lighter;
+    /*display: none;*/
+}
+
+body{
+    max-width: 520px;
+	width:100%;
+    margin: 0 auto !important
+}
+.section{
+	min-height:550px;
+	display: inline-block;
+    width: 100%;
+	height:100%;
+	position: relative;
+}
+.section img{
+	/*display: inline;*/
+	position: absolute;
+}
+.common_logo{
+	width: 30%;
+	top: 4.5%;
+	left: 0;
+}
+/*音乐按钮对应样式*/
+.music_btn{
+	position: fixed;
+	top:2%;
+	right:2%;
+	width:35px;
+}
+
+.Animate{
+    -webkit-animation:rotateIn 1s .2s linear both infinite;
+    -moz-animation:rotateIn 1s .2s linear both infinite;
+}
+@-webkit-keyframes rotateIn{
+    0%{-webkit-transform-origin:center center;
+    -webkit-transform:rotate(-360deg);
+    }
+    100%{-webkit-transform-origin:center center;
+    -webkit-transform:rotate(360);
+    }
+}
+@-moz-keyframes rotateIn{
+    0%{-moz-transform-origin:center center;
+    -moz-transform:rotate(-360deg);
+    }
+    100%{-moz-transform-origin:center center;
+    -moz-transform:rotate(360);
+    }
+}
+
+/*向上滑动*/
+.section .wipeup{
+	animation: wipeup 1s infinite;
+	-moz-animation: wipeup 1s infinite;	/* Firefox */
+	-webkit-animation: wipeup 1s infinite;	/* Safari 和 Chrome */
+	-o-animation: wipeup 1s infinite;	
+}
+@keyframes wipeup
+{
+from {
+	left:41%;
+	bottom:1%;
+	opacity:0.6;
+}
+to {
+	left:41%;
+	bottom:4%;
+	opacity:0;
+	}
+}
+@-moz-keyframes wipeup /* Firefox */
+{
+from {
+	left:41%;
+	bottom:1%;
+	opacity:0.6;
+}
+to {
+	left:41%;
+	bottom:4%;
+	opacity:0;
+	}
+}
+@-webkit-keyframes wipeup /* Safari 和 Chrome */
+{
+from {
+	left:41%;
+	bottom:1%;
+	opacity:0.6;
+}
+to {
+	left:41%;
+	bottom:4%;
+	opacity:0;
+	}
+}
+@-o-keyframes wipeup /* Opera */
+{
+from {
+	left:41%;
+	bottom:1%;
+	opacity:0.6;
+}
+to {
+	left:41%;
+	bottom:4%;
+	opacity:0;
+	}
+}
+/*loading页面*/
+#loading{
+	display:inline-block;
+	width:100%;
+    max-width: 520px;
+	height:100%;
+	background:#ffffff;
+	position: fixed;
+	z-index: 10;
+}
+#loading .tuye{
+	position:absolute;
+	left:20%;
+	top:34%;
+}
+/*首页*/
+.cover .index_people{
+	width: 93%;
+	top: 11%;
+	left: 3%;
+	opacity: 0;
+}
+.cover.current .index_people {
+	opacity: 1;
+	transition:all 2.5s linear;
+}
+.cover .index_text{
+	width: 36%;
+	top: 74%;
+	left: 45%;
+	opacity: 0;
+}
+.cover.current .index_text {
+	opacity: 1;
+	transition:all 1s linear 2.5s;
+}
+.cover .index_tingbg{
+	width: 23%;
+	top:74%;
+	left:17.5%;
+	opacity: 0;
+}
+.cover.current .index_tingbg {
+	opacity: 1;
+	transition:all 1s linear 3.5s;
+}
+.cover .index_ting{
+	width: 16.5%;
+	top: 76%;
+	left: 20%;  
+	opacity: 0;
+}
+.cover.current .index_ting {
+	opacity: 1;
+	transition:all 0.5s linear 4.5s;
+}
+/*.cover .index_tingbg:hover{
+	transform:rotate(360deg)
+}*/
+/*第二屏*/
+.second .gif{
+	width: 100%;
+	top: 11%;
+	left: 0;
+}
+.second .second_xjpshuo{
+	width:26%;
+	top:56%;
+	left:8%;
+	opacity: 0;
+}
+.second.current .second_xjpshuo {
+	opacity: 1;
+	transition:all 1.5s linear 4s;
+}
+.second .second_textone{
+	width: 100%;
+	top: 62%;
+	left: 0;
+	opacity: 0;
+}
+.second.current .second_textone {
+	opacity: 1;
+	transition:all 1.5s linear 5s;
+}
+.second .second_texttwo{
+	width: 100%;
+	top: 68%;
+	left: 0;
+	opacity: 0;
+}
+.second.current .second_texttwo {
+	opacity: 1;
+	transition:all 1.5s linear 6s;
+}
+
+/*第三屏*/
+.third .gif{
+	width: 96%;
+	top: 11%;
+	left: 2%;
+}
+.third .third_xjpshuo{
+	width: 26%;
+	top: 59%;
+	left: 11%;
+	opacity: 0;
+}
+.third.current .third_xjpshuo {
+	opacity: 1;
+	transition:all 1.5s linear 4s;
+}
+.third .third_textone{
+	width: 100%;
+	top: 65%;
+	left: 0;
+	opacity: 0;
+}
+.third.current .third_textone {
+	opacity: 1;
+	transition:all 1.5s linear 5s;
+}
+.third .third_texttwo{
+	width: 100%;
+	top: 71%;
+	left: 0;
+	opacity: 0;
+}
+.third.current .third_texttwo {
+	opacity: 1;
+	transition:all 1.5s linear 6s;
+}
+
+/*第四屏*/
+.fourth .gif{
+	width: 96%;
+	top: 11%;
+	left: 2%;
+}
+.fourth .fourth_xjpshuo{
+	width: 26%;
+	top: 58%;
+	left: 20%;
+	opacity: 0;
+}
+.fourth.current .fourth_xjpshuo {
+	opacity: 1;
+	transition:all 1.5s linear 4s;
+}
+.fourth .fourth_textone{
+	width: 100%;
+	top: 65%;
+	left: 0;
+	opacity: 0;
+}
+.fourth.current .fourth_textone {
+	opacity: 1;
+	transition:all 1.5s linear 5s;
+}
+.fourth .fourth_texttwo{
+	width: 100%;
+	top: 69%;
+	left: 0;
+	opacity: 0;
+}
+.fourth.current .fourth_texttwo {
+	opacity: 1;
+	transition:all 1.5s linear 6s;
+}
+
+/*第五屏*/
+.fifth .gif{
+	width: 90%;
+	top: 11%;
+	left: 5%;
+}
+.fifth .fifth_xjpshuo{
+	width: 26%;
+	top: 58%;
+	left: 8%;
+	opacity: 0;
+}
+.fifth.current .fifth_xjpshuo {
+	opacity: 1;
+	transition:all 1.5s linear 4s;
+}
+.fifth .fifth_textone{
+	width: 100%;
+	top: 64%;
+	left: 0;
+	opacity: 0;
+}
+.fifth.current .fifth_textone {
+	opacity: 1;
+	transition:all 1.5s linear 5s;
+}
+.fifth .fifth_texttwo{
+	width: 100%;
+	top: 75%;
+	left: 0;
+	opacity: 0;
+}
+.fifth.current .fifth_texttwo {
+	opacity: 1;
+	transition:all 1.5s linear 6s;
+}
+/*第六屏*/
+.sixth .gif{
+	width: 96%;
+	top: 11%;
+	left: 2%;
+}
+.sixth .sixth_xjpshuo{
+	width: 26%;
+	top: 62%;
+	left: 10%;
+	opacity: 0;
+}
+.sixth.current .sixth_xjpshuo {
+	opacity: 1;
+	transition:all 1.5s linear 4s;
+}
+.sixth .sixth_textone{
+	width: 100%;
+	top: 69%;
+	left: 0;
+	opacity: 0;
+}
+.sixth.current .sixth_textone {
+	opacity: 1;
+	transition:all 1.5s linear 5s;
+}
+.sixth .sixth_texttwo{
+	width: 100%;
+	top: 78%;
+	left: 0;
+	opacity: 0;
+}
+.sixth.current .sixth_texttwo {
+	opacity: 1;
+	transition:all 1.5s linear 6s;
+}
+/*第七屏*/
+.seventh .gif{
+	width: 90%;
+	top: 11%;
+	left: 5%;
+}
+.seventh .seventh_xjpshuo{
+	width: 26%;
+	top: 60%;
+	left: 7%;
+	opacity: 0;
+}
+.seventh.current .seventh_xjpshuo {
+	opacity: 1;
+	transition:all 1.5s linear 4s;
+}
+.seventh .seventh_textone{
+	width: 100%;
+	top: 66%;
+	left: 0;
+	opacity: 0;
+}
+.seventh.current .seventh_textone {
+	opacity: 1;
+	transition:all 1.5s linear 5s;
+}
+.seventh .seventh_texttwo{
+	width: 100%;
+	top: 73%;
+	left: 0;
+	opacity: 0;
+}
+.seventh.current .seventh_texttwo {
+	opacity: 1;
+	transition:all 1.5s linear 6s;
+}
+/*第八屏*/
+.eighth .gif{
+	width: 90%;
+	top: 11%;
+	left: 5%;
+}
+.eighth .eighth_xjpshuo{
+	width: 26%;
+	top: 56%;
+	left: 11%;
+	opacity: 0;
+}
+.eighth.current .eighth_xjpshuo {
+	opacity: 1;
+	transition:all 1.5s linear 4s;
+}
+.eighth .eighth_textone{
+	width: 100%;
+	top: 62%;
+	left: 0;
+	opacity: 0;
+}
+.eighth.current .eighth_textone {
+	opacity: 1;
+	transition:all 1.5s linear 5s;
+}
+.eighth .eighth_texttwo{
+	width: 100%;
+	top: 70%;
+	left: 0;
+	opacity: 0;
+}
+.eighth.current .eighth_texttwo {
+	opacity: 1;
+	transition:all 1.5s linear 6s;
+}
+.eighth .eighth_logo{
+	width: 41%;
+	bottom: 6%;
+	left: 30%;
+	opacity: 0;
+}
+.eighth.current .eighth_logo {
+	opacity: 1;
+	transition:all 2s linear 7.5s;
+}
+

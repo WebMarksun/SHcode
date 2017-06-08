@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2017情话端午—邀你朗读</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="./img/loadingty.png" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/recording.css">
+<body>
+	<div class="warp" id="warps">
+		<div class="_top">
+			<img src="./img/c-huanxisha.png" class="_cp">
+			<img src="./img/dian.png" class="_center">
+			<img src="./img/c-ht1.png" class="_ht">
+		</div>
+		<div class="_content" id="_content">
+			<span class="_title" id="_title"></span>
+			<div class="_text" id="_text">
+				<div style="text-align:center;margin-top:.7rem;">
+					轻汗微微透碧纨，<br/>
+					明朝端午浴芳兰。<br/>
+					流香涨腻满晴川，<br/>
+					彩线轻缠红玉臂。<br/>
+					小符斜挂绿云鬟，<br/>
+					佳人相见一千年。<br/>
+				</div>
+				<div style="text-align:center;display:none;">
+					五月榴花妖艳烘，<br/>
+					绿杨带雨垂垂重，<br/>
+					五色新丝缠角粽。<br/>
+					金盘送，<br/>
+					生绡画扇盘双凤。<br/>
+					正是浴兰时节动，<br/>
+					菖蒲酒美清尊共，<br/>
+					叶里黄鹂时一弄。<br/>
+					犹瞢忪，<br/>
+					等闲惊破纱窗梦。<br/>
+				</div>
+				<div style="display:none;">
+					&nbsp;&nbsp;&nbsp;&nbsp;端午节，我们那里的孩子兴挂“鸭蛋络子”。
+					头一天，就由姑姑或姐姐用彩色丝线打好了络子。
+					端午一早，鸭蛋煮熟了，由孩子自己去挑一个，鸭蛋有什么可挑的呢？
+					有！一要挑淡青壳的。鸭蛋壳有白的和淡青的两种。二要挑形状好看的。
+					别说鸭蛋都是一样的，细看却不同。有的样子蠢，有的秀气。挑好了，装在络子里，挂在大襟的纽扣上。
+					这有什么好看呢？然而它是孩子心爱的饰物。
+					鸭蛋络子挂了多半天，什么时候孩子一高兴，就把络子里的鸭蛋掏出来，吃了。
+					端午的鸭蛋，新腌不久，只有一点淡淡的咸味，白嘴吃也可以。
+				</div>
+				<div style="display:none;">
+					&nbsp;&nbsp;&nbsp;&nbsp;沿街卖的“粽子”，包得又小又俏，有加枣的，有不加枣的，摆在盘子里齐整可爱。<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;今日何日？我家老妈子曰：“今天是五月节，大门上应该插一些艾草菖蒲，点缀点缀。”
+					我家老太太曰：“今天是端午节，应该把钟馗捉鬼图，悬在壁上，孩子脸上抹些雄黄酒，辟邪辟邪。”
+					我的小孩子独曰：“今天不知是哪一天，就说应该吃粽子！”我参考众意，觉得今天叫做“粽子节”比较的亲切些。
+				</div>
+				<div style="text-align:center;display:none;">
+					此时初夏，人间四月芳菲尽，<br/>
+					秋天永远停在了路上，<br/>
+					这一天注定要成为我们心中的痛，<br/>
+					要饮雄黄，长醉不醒，<br/>
+					用艾香熏治满眼的血红。<br/>
+					要擂鼓，划龙舟，一年年去江心招魂。<br/>
+					要去农历深处，长成苍茫芦苇，<br/>
+					守望三千年的孤独。<br/>
+					“魂兮归来，魂兮归来……”<br/>
+					三千年过去，那人成了传说，<br/>
+					而我来在了这尘世，<br/>
+					坐在一条河的岸边，看见天空，<br/>
+					说黑就黑了，说亮又亮了，<br/>
+					而对岸的万家灯火，<br/>
+					仿佛从没有熄灭过一样。
+				</div>
+			</div>
+			<p class="_tishi">上下滑动显示全部文字</p>
+		</div>
+		<div class="bottom_btns" id="bottom_btns">
+			<div class="first" id="first">
+				<img src="./img/dainjiluyin.png" class="_djly" id="startRecord">
+				<img src="./img/fanhui.png" class="_fanhui">
+			</div>
+			<div class="second" style="display:none;" id="second">
+				<img src="./img/zhengzailuyin.png" class="_zzly">
+				<img src="./img/wancheng.png" class="_wancheng" id="stopRecord">
+				<img src="./img/fanhui.png" class="_fanhui">
+			</div>
+			<div class="third" style="display:none;" id="third">
+				<span></span>
+				<img src="./img/shiting.png" class="_shiting" id="playVoice">
+				<img src="./img/chonglu.png" class="_chonglu" id="_chonglu">
+				<img src="./img/baocun.png" class="_baocun" id="uploadVoice">
+			</div>
+		</div>
+		<div class="time_jindu" id="time_jindu">
+			<div class="_time"></div>
+			<div class="_jindutiao" id="_jindutiao"></div>
+			<span class="_0">0s</span>
+			<span class="_60" id="_60">60s</span>
+		</div>
+	</div>
+	<div id="_h2"  style="width:15rem;height:15rem;display:none;text-align:center;position:absolute;top:0;right:0;left:0;bottom:0;margin:auto;">
+		<h1 style="margin-bottom:1rem;">请用微信客户端打开</h1>
+		<img src="./img/ewm.png" width:4rem;height:4rem;>
+	</div>
+	<script type="text/javascript">
+		(function () {
+			function o() {
+				document.documentElement.style.fontSize = (document.documentElement.clientWidth > 750 ? 750 : document.documentElement.clientWidth) / 15 + "px"
+			}
+			var e = null;
+			window.addEventListener("resize", function () {
+				clearTimeout(e), e = setTimeout(o, 300)
+			}, !1), o()
+		})(window);
+	</script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript"  id="_recording"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			function is_weixn(){
+				var ua = navigator.userAgent.toLowerCase();
+				if(ua.match(/MicroMessenger/i)=="micromessenger") {
+					return true;
+				}else {
+					return false;
+				}
+			};
+			if (is_weixn()) {
+			$('#warps').css({display:'block'});
+				$('#_h2').css({display:'none'});
+				$('#_recording').attr('src','./js/recording.js');
+			}else {
+				$('#_h2').css({display:'block'});
+				$('#warps').css({display:'none'});
+			}
+		}
+	</script>
+</body>
+</html>

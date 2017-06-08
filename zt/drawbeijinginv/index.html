@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>情画北京邀请函</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script>
+        document.domain = 'qianlong.com';
+
+    </script>
+</head>
+
+<body>
+    <div class="cover">
+        <img src="assets/pic_hana1.png" alt="" class="pic-hana1 animated fadeInLeft">
+        <img src="assets/pic_person.png" alt="" class="pic-person animated fadeInUp">
+        <img src="assets/pic_hana2.png" alt="" class="pic-hana2 animated fadeInLeft">
+        <img src="assets/txt_2016.png" alt="" class="txt-2016 animated fadeInUp">
+        <img src="assets/txt_title.png" alt="" class="txt-title animated fadeInUp">
+        <img src="assets/txt_desc.png" alt="" class="txt-desc animated fadeInUp">
+        <img src="assets/txt_desc2.png" alt="" class="txt-desc2 animated fadeInUp">
+        <img src="assets/pic_hanabira1.png" alt="" class="pic-hanabira1 animated flipInY">
+        <img src="assets/txt_invite.png" alt="" class="txt-invite animated fadeInUp">
+        <img src="assets/txt_enter.png" alt="" class="txt-enter animated zoomIn">
+    </div>
+    <div class="submit">
+        <p class="title fz">报名参与</p>
+        <p class="fz">2016“情画北京”<br>大学生手绘北京大赛闭幕仪式<br>暨颁奖典礼</p>
+        <img src="assets/map.png" alt="" class="map">
+        <p class="address">地址：中国传媒大学综合楼一层报告厅</p>
+        <form>
+            <input type="text" placeholder="姓名" name="uname">
+            <input type="number" placeholder="手机" name="tel">
+        </form>
+        <div class="btn btn-submit">提交</div>
+        <div class="btn btn-back">返回</div>
+    </div>
+    <div id="main">
+        <div class="section">
+            <div class="process">
+                <img src="assets/pic_intro.png" alt="">
+            </div>
+        </div>
+        <div class="section">
+            <div class="process">
+                <img src="assets/pic_insti.png" alt="">
+            </div>
+        </div>
+        <div class="section">
+            <div class="process">
+                <img src="assets/pic_guest.png" alt="">
+            </div>
+        </div>
+        <div class="section">
+            <div class="process">
+                <img src="assets/pic_process.png" alt="">
+            </div>
+        </div>
+        <div class="section">
+            <div class="process">
+                <img src="assets/pic_coper.png" alt="">
+            </div>
+        </div>
+        <div class="section">
+            <div class="process">
+                <img src="assets/pic_invite.png" alt="">
+            </div>
+        </div>
+        <div class="section">
+            <p class="title">兔爷官方微信</p>
+            <div class="qr">
+                <img src="assets/qr.png" alt="">
+                <p>长按添加<br>兔爷动漫为朋友</p>
+            </div>
+            <p class="ending fz">闭幕仪式暨颁奖典礼<br>期待您的参与</p>
+            <div class="btn btn-enroll">点击报名</div>
+            <p class="spec">特别鸣谢：Flower Plus、动画学术趴</p>
+        </div>
+    </div>
+    <img src="assets/arrow.png" alt="" class="arrow">
+    <audio src="assets/bgm.mp3" autoplay loop></audio>
+    <script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.min.js"></script>
+    <script src="index.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://comic.qianlong.com/m/weixin_share.js"></script>
+    <script>
+        $.fn.wxshare({
+            title: "情画北京邀请函",
+            imgUrl: "http://comic.qianlong.com/m/ico.jpg",
+            desc: "2016“情画北京”大学生手绘北京大赛闭幕仪式暨颁奖典礼，期待您的参与",
+            audio: "",
+            bdname: "qhbjyqh",
+            bdfunc: "share",
+            bdvalue: "weixin",
+            shareSuccessCall: function() {}
+        });
+
+    </script>
+</body>
+
+</html>

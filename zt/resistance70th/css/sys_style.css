@@ -1,0 +1,321 @@
+html,
+body,
+.page {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor: url(http://comic.qianlong.com/zt/ceremony/img/pointer-1.ico), auto;
+    /* because of IE */
+}
+
+body {
+    position: relative;
+    box-shadow: 5px 5px 10px black inset;
+    background-image: url(../img/wood.jpg);
+    overflow: hidden;
+}
+
+.page-box {
+    overflow-y: auto;
+}
+
+.page,
+.page-sub,
+.page-box,
+#pb1-3,
+#ps2-3,
+#ps2-4 {
+    display: none;
+}
+
+.page {
+    position: relative;
+}
+
+#bg,
+.page-sub,
+.page-box,
+img {
+    position: absolute;
+}
+
+.button,
+.index {
+    cursor: url(http://comic.qianlong.com/zt/ceremony/img/pointer-2.ico), pointer;
+    /* because of IE */
+}
+
+#bg {
+    top: 0%;
+    left: 50%;
+    z-index: -2;
+    margin-left: -40%;
+    width: 80%;
+    height: 100%;
+}
+
+.page-sub {
+    top: 16%;
+    left: 14%;
+    width: 72%;
+    height: 76%;
+}
+
+.page-box {
+    top: 16%;
+    left: 3%;
+    width: 96%;
+    height: 67%;
+}
+
+#p1-2:hover {
+    bottom: -4%;
+}
+
+#p1-6:hover {
+    right: 1%;
+    /*
+    transform: rotate(-2deg);
+    transform-origin: center bottom;
+*/
+}
+
+#ps1-7:hover,
+#ps2-3:hover {
+    right: -17%;
+}
+
+#p0-1 {
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 10px black;
+}
+
+#p1-1,
+#p2-1,
+#p4-1 {
+    top: -10%;
+    left: 7%;
+    width: 18%;
+}
+
+#p1-2 {
+    bottom: -5%;
+    left: 14%;
+    width: 30%;
+}
+
+#p1-3 {
+    top: 26%;
+    left: 23%;
+    width: 54%;
+}
+
+#p1-4 {
+    top: 61%;
+    left: 52%;
+    width: 24%;
+}
+
+#p1-5 {
+    bottom: 0;
+    right: -8%;
+    width: 13%;
+}
+
+#p1-6 {
+    bottom: 32%;
+    right: 0%;
+    width: 11%;
+}
+
+#p1-7 {
+    bottom: -1%;
+    right: -8%;
+    width: 12%;
+}
+
+#p1-8 {
+    top: 70%;
+    left: 9%;
+    width: 5%;
+}
+
+#p1-9 {
+    top: 36%;
+    right: 12%;
+    width: 5%;
+}
+
+#p2-2,
+#p5-3 {
+    top: 5%;
+    right: 14%;
+    width: 3%;
+}
+
+#p2-3 {
+    top: 41%;
+    left: 38%;
+    width: 42%;
+}
+
+#p2-4 {
+    top: 69%;
+    left: 27%;
+    width: 47%;
+}
+
+#p2-5,
+#p4-2 {
+    top: 25%;
+    left: 17%;
+    width: 20%;
+}
+
+#p2-6,
+#ps2-4 {
+    top: 30%;
+    left: 44%;
+    width: 10%;
+}
+
+#p3-1 {
+    z-index: -1;
+    top: 6%;
+    left: 11%;
+    width: 78%;
+}
+
+#p3-2,
+#p4-3 {
+    z-index: 1;
+    top: 9%;
+    right: 12%;
+    width: 3%;
+}
+
+#p4-4 {
+    top: 10%;
+    right: 10%;
+    width: 45%;
+}
+
+#p5-1 {
+    margin-left: -35%;
+    top: 25%;
+    left: 50%;
+    width: 70%;
+}
+
+#p5-2 {
+    margin-left: -13%;
+    top: 55%;
+    left: 50%;
+    width: 26%;
+}
+
+#ps1-1 {
+    top: 2%;
+    left: 20%;
+    width: 60%;
+}
+
+#ps1-2 {
+    top: 14%;
+    left: 3%;
+    width: 94%;
+}
+
+#ps1-3 {
+    top: 39%;
+    left: 3%;
+    width: 94%;
+}
+
+#ps1-4 {
+    top: 52%;
+    left: 28%;
+    width: 4%;
+}
+
+#ps1-5 {
+    top: 64%;
+    left: 3%;
+    width: 48%;
+}
+
+#ps1-6 {
+    top: 65%;
+    left: 56%;
+    width: 41%;
+}
+
+#ps1-7,
+#ps2-3 {
+    top: 38%;
+    right: -16%;
+    width: 10%;
+}
+
+#ps2-1 {
+    top: 7%;
+    left: 3%;
+    width: 10%;
+}
+
+#ps2-2 {
+    bottom: 1%;
+    left: 2%;
+    width: 96%;
+}
+
+.index {
+    bottom: 0%;
+    width: 13%;
+}
+
+#i1 {
+    left: 10%;
+}
+
+#i2 {
+    left: 24%;
+}
+
+#i3 {
+    left: 38%;
+}
+
+#i4 {
+    left: 52%;
+}
+
+#i5 {
+    left: 66%;
+}
+
+#i6 {
+    left: 80%;
+}
+
+#pb1-1 {
+    top: 0;
+    left: 0;
+    width: 73%;
+}
+
+#pb1-2 {
+    top: 40%;
+    left: 67%;
+    width: 28%;
+    box-shadow: 0 0 10px #9E7A43;
+}
+
+#pb1-3 {
+    top: 150%;
+    left: 67%;
+    width: 28%;
+    box-shadow: 0 0 10px #9E7A43;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2017情话端午—邀你朗读</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="./img/loadingty.png" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/swiper.min.css">
+<body>
+	<div class="warp" style="display:block;" id="warp">
+		<div class="swiper-container">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(./img/huanxisha.png)"></div>
+            <div class="swiper-slide" style="background-image:url(./img/yujiaao.png)"></div>
+            <div class="swiper-slide" style="background-image:url(./img/wzq.png)"></div>
+            <div class="swiper-slide" style="background-image:url(./img/yashetanchi.png)"></div>
+            <div class="swiper-slide" style="background-image:url(./img/huainianyigeren.png)"></div>
+      	</div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-prev" style="left:-0.87rem;background:url(./img/left1.png) no-repeat;width:15px;height:32px;background-size:12px 22px;" ></div>
+         <div class="swiper-button-next" style="right:-0.92rem;background:url(./img/right1.png) no-repeat;width:15px;height:32px;background-size:12px 22px;"></div>
+      </div>
+		<!-- <img src="./img/index_text.png" style="width:3.62rem;height:0.5rem;margin:.4rem auto 0;display:block;"> -->
+		<img src="./img/c-qhdw.png" class="c_qhdw">
+		<img src="./img/c-wyds.png" class="c_wyds" id="btn_wyds">
+		<img src="./img/index_logo.png" class="index_logo" >
+	</div>
+	<div id="_h1" style="width:15rem;height:15rem;display:none;text-align:center;position:absolute;top:0;right:0;left:0;bottom:0;margin:auto;">
+		<h1 style="margin-bottom:1rem;">请用微信客户端打开</h1>
+		<img src="./img/ewm.png" width:4rem;height:4rem;>
+	</div>
+	<script type="text/javascript">
+		(function () {
+			function o() {
+				document.documentElement.style.fontSize = (document.documentElement.clientWidth > 750 ? 750 : document.documentElement.clientWidth) / 15 + "px"
+			}
+			var e = null;
+			window.addEventListener("resize", function () {
+				clearTimeout(e), e = setTimeout(o, 300)
+			}, !1), o()
+		})(window);
+	</script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script  id="_index"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			function is_weixn(){
+				var ua = navigator.userAgent.toLowerCase();
+				if(ua.match(/MicroMessenger/i)=="micromessenger") {
+					  return true;
+				}else {
+					  return false;
+				}
+			};
+			if (is_weixn()) {
+			$('#warp').css({display:'block'});
+				$('#_h1').css({display:'none'});
+				$('#_index').attr('src','./js/index.js');
+			}else {
+				$('#_h1').css({display:'block'});
+				$('#warp').css({display:'none'});
+			}
+		}
+	</script>
+</body>
+</html>

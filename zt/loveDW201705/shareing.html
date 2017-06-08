@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>2017情话端午—邀你朗读</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="./img/loadingty.png">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/share.css">
+</head>
+
+<body>
+	<div id="h1" style="width:15rem;height:15rem;display:none;text-align:center;position:absolute;top:0;right:0;left:0;bottom:0;margin:auto;">
+		<h1 style="margin-bottom:1rem;">请用微信客户端打开</h1>
+		<img src="./img/ewm.png" width:4rem;height:4rem;>
+	</div>
+	<!--<audio controls loop="loop" id="audio" src="./music.mp3"></audio>
+	<audio id="voice" controls src="./djx.mp3"></audio>-->
+	<div class="sh_warp" id="warp">
+		<div class="pop">
+			<img class="sh_prompt" src="./img/sh_prompt.png">
+		</div>
+		<div class="sh_title">
+			<img class="sh_title_logo" src="./img/logo.png">
+			<img class="sh_title_qhdw" src="./img/sh_qhdw.png">
+		</div>
+		<div class="sh_content">
+			<div class="sh_record_box">
+				<img class="sh_record_b" src="./img/sh_recordb.png">
+				<img class="sh_record_s" src="./img/sh_records.png">
+				<img class="sh_record_axie" src="./img/sh_recordaxie.png">
+				<img class="sh_record_needle" src="./img/sh_needle.png">
+			</div>
+			<div class="sh_poetry_name_box">
+				<p class="sh_poetry_name"></p>
+			</div>
+			<div class="sh_voice_btngroup">
+				<img class="sh_playbtn" src="./img/sh_play.png">
+				<img class="sh_pausebtn" src="./img/sh_pause.png">
+			</div>
+		</div>
+		<div class="sh_btn_group">
+			<img class="sh_share_btn" src="./img/sh_sharevoice.png">
+			<a href="http://comictest.qianlong.com/zt/loveDW201705/"><img class="sh_readagain_btn" src="./img/sh_readagain.png"></a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		(function () {
+			function o() {
+				document.documentElement.style.fontSize = (document.documentElement.clientWidth > 750 ? 750 : document.documentElement.clientWidth) / 15 + "px"
+			}
+			var e = null;
+			window.addEventListener("resize", function () {
+				clearTimeout(e), e = setTimeout(o, 300)
+			}, !1), o()
+		})(window);
+	</script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			function is_weixn() {
+				var ua = navigator.userAgent.toLowerCase();
+				if (ua.match(/MicroMessenger/i) == "micromessenger") {
+					return true;
+				} else {
+					return false;
+				}
+			};
+			if (is_weixn()) {
+				document.getElementById('warp').style.display = 'block';
+				document.getElementById('h1').style.display = 'none';
+				document.getElementById("myjs").setAttribute("src","./js/share.js")
+			} else {
+				document.getElementById('h1').style.display = 'block';
+				document.getElementById('warp').style.display = 'none';
+			}
+		}
+	</script>
+	<script id="myjs"></script>
+</body>
+
+</html>
