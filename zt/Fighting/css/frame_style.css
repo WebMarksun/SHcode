@@ -1,0 +1,262 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei";
+    height: 100%;
+    background-color: #666;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+.banner {
+    width: 100%;
+    background-color: #00a0ea;
+}
+
+.inner {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.navi {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header .navi li {
+    height: 25px;
+    float: left;
+}
+
+.header .navi li a {
+    padding: 5px 4px;
+    font: 12px "SimSun";
+    color: #000;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.header .navi li:first-child a {
+    padding-left: 0;
+}
+
+.header .navi li:last-child a {
+    padding-right: 0;
+}
+
+.banner .navi li {
+    height: 50px;
+    float: left;
+    transition: all 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.banner .navi li.logo,
+.banner .navi li.logo:hover {
+    background-color: #fff;
+}
+
+.banner .navi li.active,
+.banner .navi li:hover {
+    background-color: #006ea1;
+}
+
+.banner .navi li a {
+    padding: 5px 13px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.banner .navi li:first-child a {
+    padding: 0 5px;
+}
+
+.banner .navi li:first-child a img {
+    height: 92%;
+}
+
+.qr {
+    float: right;
+    height: 50px;
+}
+
+.qr .qr-item {
+    position: relative;
+    float: right;
+    position: relative;
+    padding: 12px 10px;
+    min-width: 120px;
+}
+
+.qr .qr-title {
+    margin: 0;
+    padding-left: 2.5em;
+    height: 26px;
+    font-size: 18px;
+    background: url(../image/qr_icon.png) no-repeat 0% 0%;
+    -webkit-transition: background 0.5s;
+    cursor: default;
+}
+
+.qr .qr-item:hover {
+    background-color: #af2100;
+}
+
+.qr .qr-item:hover .qr-title {
+    color: #fff;
+    background: url(../image/qr_icon.png) no-repeat 0% 100%;
+}
+
+.qr .qr-item:hover .qr-con {
+    display: block;
+}
+
+.qr .qr-con {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 5;
+    padding: 15px 0;
+    width: 100%;
+    background: #fff;
+    border: solid 1px #ccc;
+}
+
+.qr .qr-con a {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+
+.qr .qr-con hr {
+    margin: 15px 0;
+}
+
+.qr .qr-con img,
+.qr .qr-con canvas,
+.qr .qr-con table {
+    display: block;
+    margin: 0 auto;
+}
+
+.share {
+    position: absolute;
+    bottom: 10px;
+    z-index: 5;
+    width: 100%;
+}
+
+.share .bdsharebuttonbox {
+    float: right;
+    width: 76px;
+    height: 44px;
+    background-color: #22262c;
+    overflow: hidden;
+    -webkit-transition: width 0.5s;
+}
+
+.share .bdsharebuttonbox p {
+    float: left;
+    margin: 6px;
+    color: white;
+    line-height: 32px;
+}
+
+.share:hover .bdsharebuttonbox {
+    width: 304px;
+}
+
+.container {
+    position: relative;
+    padding: 10px 0;
+    height: 1000px;
+    background-color: #666;
+}
+.guide {
+    width: 332px;
+    text-align: center;
+    height: 203px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    margin: auto;
+    padding: 20px 30px;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.mobile {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile .qrcode {
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin: -60px 0 0 -60px;
+}
+
+.mobile .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+    filter: alpha(opacity=75);
+}
+
+.iframe-wrapper {
+    margin: 0 auto;
+    width: 414px;
+    height: 736px;
+    min-width: 372px;
+    min-height: 662px;
+    border: 5px solid #000;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5e5;
+    overflow: hidden;
+}
