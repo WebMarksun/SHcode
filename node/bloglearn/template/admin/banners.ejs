@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .shadow{
+            position:fixed;
+            width:100%;
+            height:100%;
+            background-color:#000;
+            opacity:0.3;
+            filter:alpha(opacity:30);
+            left:0;
+            top:0;
+        }
+        .mod_dialog{
+            width:300px;
+            height:200px;
+            border:1px solid black;
+            background-color:#fff;
+            position:fixed;
+            left:50%;
+            top:50%;
+            margin-left:-150px;
+            margin-top:-100px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <%include components/top.inc.ejs%>
+            <div class="content-wrap">
+                <div>
+                    <form action='?' method='post'>
+                        标题：<input type="text" name="title" value=""><br>
+                        描述：<textarea name='description'></textarea>
+                        链接：<input type="text" name="href" value=""><br>
+                        <input type="submit" value="添加"/>
+                    </form>
+                </div>
+                <table border='1' width = '100%'>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>标题</th>
+                            <th>描述</th>
+                            <th>链接</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% for(var i=0;i<banners.length;i++){ %>
+                        <tr>
+                            <td><%=banners[i].ID%></td>
+                            <td><%=banners[i].title%></td>
+                            <td><%=banners[i].description%></td>
+                            <td><%=banners[i].href%></td>
+                            <td>
+                                <a href="?act=mod&id=<%=banners[i].ID%>">修改</a>
+                                <a href="?act=del&id=<%=banners[i].ID%>" onclick='return confirm("是否删除")'>删除</a>
+                            </td>
+                        </tr>
+                    <%}%>
+                    </tbody>
+                </table>
+                <% if( typeof mod_data!='undefined'){%>
+                <div class='shadow'>
+                </div>
+                <div class="mod_dialog">
+                    <form action='?' method='post'>
+                        <input type="hidden" name="mod_id" value="<%=mod_data.ID%>">
+                        标题：<input type="text" name="title" value="<%=mod_data.title%>"><br>
+                        描述：<textarea name='description'><%=mod_data.description%></textarea>
+                        链接：<input type="text" name="href" value="<%=mod_data.href%>"><br>
+                        <input type="submit" value="添加"/>
+                        <a href="/admin/banners">取消修改</a>
+                    </form>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </body>
+</html>
