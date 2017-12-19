@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="background:url('../../99_res/touhou.jpg');background-repeat: round;width: 800px;height: 500px;">
+    <canvas id="cvs" width="800" height="500"></canvas>
+</div>
+<script>
+    var cvs = document.getElementById('cvs');
+    var ctx = cvs.getContext('2d');
+
+    ctx.fillStyle = 'rgb(205,205,205)';
+    ctx.fillRect(0, 0, 800, 500);
+
+    var x = -1, y = -1;
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = '30';
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.globalCompositeOperation = "destination-out";
+    cvs.addEventListener('mousemove', function (evt) {
+        if (evt.which == 1) {
+            if (x == -1 || y == -1) {
+                x = evt.offsetX;
+                y = evt.offsetY;
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(evt.offsetX, evt.offsetY);
+                x = evt.offsetX;
+                y = evt.offsetY;
+                ctx.stroke();
+            }
+        }
+    });
+    cvs.addEventListener('mouseup',function(evt){
+        var imgData = ctx.getImageData(0, 0, 800, 500);
+        var count = 0;
+        console.log(imgData);
+        for (var i = 0; i < 800 * 500 * 4; i += 4) {
+            var r = imgData.data[i + 0];
+            var g = imgData.data[i + 1];
+            var b = imgData.data[i + 2];
+            var a = imgData.data[i + 3];
+            if(r==205&&g==205&&b==205){
+                count++;
+            }else{
+            }
+        }
+        console.log(count/(800*500));
+        if(count/(800*500)<0.4){
+            alert("go!");
+            ctx.fillRect(0,0,800,500);
+        }
+    });
+</script>
+</body>
+</html>

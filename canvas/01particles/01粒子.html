@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01粒子</title>
+</head>
+<body>
+<canvas id="cvs" width="500" height="500"></canvas>
+<div style="float: left;" id="stage"></div>
+<button onclick="buildParticles()">click</button>
+<script src="konva.js"></script>
+<script>
+    var image = new Image();
+    image.src = 'reimu.jpg';
+    image.onload = function () {
+
+        var cvs = document.getElementById('cvs');
+        var ctx = cvs.getContext('2d');
+        ctx.font = "50px 微软雅黑";
+        ctx.textAlign = 'center';
+//        ctx.fillText("Hello World", 250, 300);
+        cvs.onclick = function (ev) {
+            ctx.moveTo(ev.offsetX, ev.offsetY);
+        };
+        cvs.onmousemove = function (ev) {
+            console.log(ev.which)
+            if (ev.which == 1) {
+                ctx.lineWidth = 10;
+                ctx.strokeStyle = 'green';
+                ctx.lineTo(ev.offsetX, ev.offsetY);
+                ctx.stroke();
+            }
+        };
+
+
+        var stage = new Konva.Stage({container: 'stage', width: 500, height: 500});
+        var layer = new Konva.Layer();
+
+        function buildParticles() {
+            var imgData = ctx.getImageData(0, 0, 500, 500);
+            var arr = [];
+            for (var i = 0; i < 500 * 500 * 4; i = i + 4) {
+                var r = imgData.data[i];
+                var g = imgData.data[i + 1];
+                var b = imgData.data[i + 2];
+                var a = imgData.data[i + 3];
+                if (r + g + b + a > 0 && (r + g + b < 300)) {
+                    arr.push({y: Math.floor(i / (500 * 4)), x: (i % (500 * 4)) / 4});
+                }
+            }
+            window.layer = layer;
+            stage.add(layer);
+            arr = arr.filter(function (val, index) {
+                return index % 4 == 0
+            });
+            for (var i = 0; i < 400; i++) {
+                void function () {
+                    var index = Math.floor(Math.random() * (arr.length - 1));
+                    var target = arr[index];
+                    arr.splice(index, 1);
+                    var circle = new Konva.Circle({
+                        x: Math.random() * 500,
+                        y: Math.random() * 500,
+                        radius: Math.floor(Math.random() * 4 + 1),
+                        fill: 'yellow'
+                    });
+                    circle.cache();
+                    layer.add(circle);
+                    circle.to({
+                        duration: 2,
+                        easing: Konva.Easings.StrongEaseIn,
+                        x: target.x,
+                        y: target.y,
+                        scaleX: 1,
+                        scaleY: 1
+                    });
+                }()
+            }
+        }
+        window.buildParticles = buildParticles;
+    }
+</script>
+</body>
+</html>
