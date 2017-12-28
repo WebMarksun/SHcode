@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>十月文学 — 我的北京</title>
+    <link href="./images/loadingty.png" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <!-- <link href="./css/animate.css" rel="stylesheet" type="text/css"> -->
+</head>
+
+<body>
+    <img id="audio_btn" class="music_btn Animate" src="./images/music.png">
+    <audio id="audioplay" src="./images/1.mp3"></audio>
+    <audio id="audiobg" preload  loop autoplay src="./images/bg.mp3"></audio>
+    <div id="loading-page">
+        <div class="load_bar">
+            <span class="number" id="number">0%</span>
+        </div>
+        <div class="load_barchoose"></div>
+        <img class="load_text" src="./images/homepage_text.png">
+    </div>
+    <div class="home_page">
+        <img class="homepage_bg" src="./images/homepage.png">
+        <img class="homepage_text" src="./images/homepage_text.png">
+        <img class="book_small" src="./images/home_sbook.png">
+        <!-- <img class="book_bigback" src="./images/page1.png"> -->
+        <img class="book_big" src="./images/home_bbook.png">
+        <div class="radius_btn">
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="box">
+            <div class="p1" id="flipbook">
+                <div  style="background-image:url(images/page1.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/pageback.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/page2.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/pageback.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/page3.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/pageback.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/page4.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/pageback.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/page5.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/pageback.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/page6.png);
+                background-size: 100% 100%;">
+                </div>
+                <div  style="background-image:url(images/pageback.png);
+                background-size: 100% 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="endpage">
+        <img class="end_text" src="./images/end_text.png">
+        <img class="end_book" src="./images/end_book.png">
+        <img class="end_leaf" src="./images/leaf.png">
+        <img class="end_share end_btn" src="./images/sharetofriend.png">
+        <img class="end_again end_btn" src="./images/again.png">
+    </div>
+    <div id="pop">
+        <img class="pop_share" src="./images/thereshare.png">
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./js/turn.min.js"></script>
+    <script src="./js/base.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $(function(){
+           
+        })
+        // $(window).ready(function () {
+        //     $('#flipbook').turn({
+        //         width: 200,
+        //         height:300,
+        //         display: 'single',
+        //         autoCenter: true,
+        //         acceleration: true,
+        //         gradients: !$.isTouch,
+        //         elevation: 50,
+        //         when: {
+        //             turned: function (e, page) {
+        //                 /*console.log('Current view: ', $(this).turn('view'));*/
+        //             }
+        //         }
+        //     });
+        // });
+
+
+    </script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: "get",
+                async: true,
+                url: "http://partner.qianlong.com/chart/api/cshare",
+                dataType: "jsonp",
+                data: {
+                    "weburl": location.href.split("#")[0]
+                },
+                success: function (json) {
+                    wx.config({
+                        debug: false,
+                        appId: json.appId,
+                        timestamp: json.timestamp,
+                        nonceStr: json.nonceStr,
+                        signature: json.signature,
+                        jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
+                    });
+                },
+                error: function () {
+                    console.log("share error");
+                }
+            });
+            wx.ready(function () {
+                var obj_co = {
+                    title: "追寻每一个思念里的北京",
+                    link: location.href.split("#")[0],
+                    imgUrl: "http://comictest.qianlong.com/sh/culturalFestivals/images/book.jpg",
+                    success: function () {
+                        console.log("share successfully");
+                    },
+                    cancel: function () { }
+                },
+                    obj_co_desc = {
+                        desc: "北京这座城,胡同如织,院落幽深,更如一本厚重的大书,每一页都有无数的故事,让人一辈子都读不完。"
+                    },
+                    obj_timeline = $.extend({}, obj_co),
+                    obj_appmsg = $.extend({}, obj_co_desc, obj_co),
+                    obj_qq = $.extend({}, obj_co_desc, obj_co),
+                    obj_wb = $.extend({}, obj_co_desc, obj_co),
+                    obj_qzone = $.extend({}, obj_co_desc, obj_co);
+
+                wx.onMenuShareTimeline(obj_timeline);
+                wx.onMenuShareAppMessage(obj_appmsg);
+                wx.onMenuShareQQ(obj_qq);
+                wx.onMenuShareWeibo(obj_wb);
+                wx.onMenuShareQZone(obj_qzone);
+            });
+        })
+    </script>
+</body>
+
+</html>
