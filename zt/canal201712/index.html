@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/animatemyself.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="./images/loadingty.png" rel="shortcut icon">
+    <title>我和运河有个约会</title>
+</head>
+
+<body>
+    <div id="scrrol">
+        <h1>请竖屏锁定后打开</h1>
+    </div>
+    <div id="loadpage">
+        <img class="loadwater" src="./images/loadwater.png">
+        <img class="loadship" src="./images/loadship.png">
+        <span class="loadtext">0%</span>
+    </div>
+    <div id="notshow"></div>
+    <div id="homepage" class="animated">
+        <img class="homebg animated" src="./images/homebg.png">
+        <img class="hometext animated" src="./images/hometext.png">
+        <div class="homebtnbox animated">
+            <img class="homebtn" src="./images/homebtn.png">
+            <img class="homeico animated homebtnico" src="./images/homeico.png">
+            <img class="homeintro" src="./images/homeintro.png">
+        </div>
+        <img class="homecloud1 animated " src="./images/homecloud.png">
+        <img class="homecloud2 animated" src="./images/homecloud.png">
+        <img class="tracloud1 animated" src="./images/joincloud1.png">
+        <img class="tracloud3 animated" src="./images/joincloud3.png">
+        <img class="tracloud2 animated" src="./images/joincloud2.png">
+    </div>
+    <audio loop="loop" src="./music/bg.mp3"></audio>
+    <div class="screen">
+        <div class="box">
+            <img class="img" id="noshow" src="./images/bg1.jpg">
+            <div class="move">
+                <img class="img bg" src="./images/bg1.jpg">
+                <img class="group1" src="./images/1-7.png">
+                <img class="group2" src="./images/2-3.png">
+                <img class="group3-1 animated petal" src="./images/flowermove.png">
+                <img class="group3" src="./images/3-1.png">
+                <img class="group4" src="./images/4-3.png">
+                <img class="group5" src="./images/5-4.png">
+                <img class="group6" src="./images/6-4.png">
+                <img class="group7" src="./images/7-2.png">
+                <img class="water animated " src="./images/water.png">
+                <img class="ship animated  " src="./images/ship.png">
+                <img class="group8" src="./images/8-3.png">
+                <img class="tree7" src="./images/7-tree.png">
+                <img class="lotusleaf" src="./images/lotusleaf.png">
+                <img class="leafup animated leafupmove" src="./images/leafup.png">
+                <img class="leafdown animated leafdownmove" src="./images/leafdown.png">
+                <img class="leafwater animated leafwatermove" src="./images/leafwater.png">
+                <img class="leaf9 animated leaf9move" src="./images/leaf9.png">
+                <img class="group9" src="./images/9-1.png">
+                <img class="group10" src="./images/10-1.png">
+                <img class="snow10 animated snowing" src="./images/snow10.png">
+                <img class="group11" src="./images/11-1.png">
+                <img class="snow11 animated snowing" src="./images/snow11.png">
+                <img class="snow12 animated snowing" src="./images/snow12.png">
+                <img class="text1 animated " src="./images/12-1.png">
+                <img class="text2 animated " src="./images/12-2.png">
+                <img class="text3 animated " src="./images/12-3.png">
+                <img class="text4 animated " src="./images/12-4.png">
+                <img class="text5 animated " src="./images/12-5.png">
+                <img class="text6 animated " src="./images/12-6.png">
+                <img class="text7 animated " src="./images/12-7.png">
+                <img class="text8 animated " src="./images/12-8.png">
+                <img class="text9 animated " src="./images/12-9.png">
+                <img class="text10 animated " src="./images/12-10.png">
+                <img class="text11 animated " src="./images/12-11.png">
+                <img class="text12 animated " src="./images/12-12.png">
+            </div>
+        </div>
+    </div>
+    <div id="lastpage">
+        <img class="lastbg" src="./images/lastpage.png">
+        <img class="share" src="./images/share.png">
+        <a href="#"><img class="backhome" src="./images/backhome.png"></a>
+        <img class="tracloud1-1 animated" src="./images/joincloud1.png">
+        <img class="tracloud1-2 animated" src="./images/joincloud2.png">
+    </div>
+    <div id="shade">
+        <img src="./images/guideico.png">
+    </div>
+    <div class="buttonbox">
+        <img class="buttontext" src="./images/buttontext.png">
+        <div class="button"></div>
+    </div>
+    <!--音乐按钮-->
+    <img class="music_btn _Animate" id="audio_btn" src="./images/0-1.png"></body>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/pxloader-all.min.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/base.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    $(function() {
+        $.ajax({
+            type: "get",
+            async: true,
+            url: "http://partner.qianlong.com/chart/api/cshare",
+            dataType: "jsonp",
+            data: {
+                "weburl": location.href.split("#")[0]
+            },
+            success: function(json) {
+                wx.config({
+                    debug: false,
+                    appId: json.appId,
+                    timestamp: json.timestamp,
+                    nonceStr: json.nonceStr,
+                    signature: json.signature,
+                    jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
+                });
+            },
+            error: function() {
+                console.log("share error");
+            }
+        });
+        wx.ready(function() {
+            var obj_co = {
+                    title: "我和运河有个约会",
+                    link: location.href.split("#")[0],
+                    imgUrl: "http://comictest.qianlong.com/sh/canal/images/shareico.png",
+                    success: function() {
+                        console.log("share successfully");
+                    },
+                    cancel: function() {}
+                },
+                obj_co_desc = {
+                    desc: "【情画大运河】漫画中，大运河北京段遗址是啥样？"
+                },
+                obj_timeline = $.extend({}, obj_co),
+                obj_appmsg = $.extend({}, obj_co_desc, obj_co),
+                obj_qq = $.extend({}, obj_co_desc, obj_co),
+                obj_wb = $.extend({}, obj_co_desc, obj_co),
+                obj_qzone = $.extend({}, obj_co_desc, obj_co);
+
+            wx.onMenuShareTimeline(obj_timeline);
+            wx.onMenuShareAppMessage(obj_appmsg);
+            wx.onMenuShareQQ(obj_qq);
+            wx.onMenuShareWeibo(obj_wb);
+            wx.onMenuShareQZone(obj_qzone);
+        });
+    })
+</script>
+
+</html>

@@ -1,0 +1,664 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none/* disables the callout */
+}
+
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* display: none; */
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* display: none; */
+}
+
+#scrrol {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    display: none;
+}
+
+#scrrol h1 {
+    text-align: center;
+    display: inline;
+    position: absolute;
+    top: 40%;
+}
+
+#loadpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    background: url(../images/bg.png) 100% 100%;
+}
+
+#notshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    background-color: #fff;
+    z-index: 850;
+}
+
+.loadship {
+    height: 14%;
+    position: absolute;
+    top: 43%;
+    left: 38.67%;
+    -webkit-animation: loadship 2s linear both infinite;
+    -moz-animation: loadship 2s linear both infinite;
+}
+
+.loadwater {
+    height: 22%;
+    position: absolute;
+    top: 39%;
+    left: 35%;
+    -webkit-animation: loadwater 2s linear both infinite;
+    -moz-animation: loadwater 2s linear both infinite;
+}
+
+.loadtext {
+    width: 12%;
+    position: absolute;
+    top: 50%;
+    left: 23%;
+    transform: rotate(90deg)
+}
+
+#homepage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 800;
+    background: url(../images/bg.png) 100% 100%;
+}
+
+.homemove {
+    -webkit-animation: homepagemove 4s linear both 1;
+    -moz-animation: homepagemove 4s linear both 1;
+}
+
+.homein {
+    -webkit-animation: homein 4s linear both 1;
+    -moz-animation: homein 4s linear both 1;
+}
+
+.hometext,
+.homebg {
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.homeani {
+    -webkit-animation: fadeIn 2s linear both 1;
+    -moz-animation: fadeIn 2s linear both 1;
+}
+
+.fadeIn {
+    -webkit-animation: fadeIn 2s linear both 1;
+    -moz-animation: fadeIn 2s linear both 1;
+}
+
+.homebtnbox {
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.homebtn {
+    position: absolute;
+    bottom: 8%;
+    left: 14%;
+    height: 13%;
+}
+
+.homeico {
+    position: absolute;
+    bottom: 9%;
+    /* 16 */
+    left: 23%;
+    height: 4%;
+    -webkit-animation: homebtnico 2s linear both infinite;
+    -moz-animation: homebtnico 2s linear both infinite;
+}
+
+.homeintro {
+    position: absolute;
+    bottom: 5%;
+    left: 7%;
+    height: 36%;
+}
+
+.homecloud1 {
+    opacity: 0;
+    position: absolute;
+    top: 2%;
+    left: 49%;
+    height: 31%;
+}
+
+.homecloudmove1 {
+    -webkit-animation: cloud1move 2s 0.5s linear both infinite;
+    -moz-animation: cloud1move 2s 0.5s linear both infinite;
+}
+
+.homecloudmove2 {
+    -webkit-animation: cloud2move 2s 0.5s linear both infinite;
+    -moz-animation: cloud2move 2s 0.5s linear both infinite;
+}
+
+.homecloud2 {
+    opacity: 0;
+    position: absolute;
+    bottom: 3%;
+    left: 35%;
+    height: 24%;
+}
+
+.tracloud1 {
+    opacity: 1;
+    position: absolute;
+    bottom: -60%;
+    left: 50%;
+    width: 60%;
+}
+
+.tracloud2 {
+    opacity: 1;
+    position: absolute;
+    bottom: -60%;
+    left: -2%;
+    width: 60%;
+}
+
+.tracloud3 {
+    opacity: 1;
+    position: absolute;
+    bottom: -60%;
+    left: -18%;
+    width: 60%;
+}
+
+.tracloudmove1 {
+    -webkit-animation: tracloudmove1 5.5s ease-out both 1;
+    -moz-animation: tracloudmove1 5.5s ease-out both 1;
+}
+
+.tracloudmove2 {
+    -webkit-animation: tracloudmove2 5.5s ease-out both 1;
+    -moz-animation: tracloudmove2 5.5s ease-out both 1;
+}
+
+.tracloudmove3 {
+    -webkit-animation: tracloudmove3 5.5s ease-out both 1;
+    -moz-animation: tracloudmove3 5.5s ease-out both 1;
+}
+
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.box #noshow {
+    opacity: 0;
+    width: 100%;
+}
+
+.move .bg {
+    width: 100%;
+}
+
+.move {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.move .group1 {
+    width: 64.83%;
+    position: absolute;
+    top: 0%;
+    left: 35%;
+}
+
+.move .group2 {
+    width: 86.01%;
+    position: absolute;
+    top: 8.1%;
+    left: 5%;
+}
+
+.move .group3-1 {
+    width: 82.54%;
+    position: absolute;
+    top: 16.5%;
+    left: 0%;
+    -webkit-animation: petal 14s linear both infinite;
+    -moz-animation: petal 14s linear both infinite;
+}
+
+.move .group3 {
+    width: 39.71%;
+    position: absolute;
+    top: 16.6%;
+    left: 62%;
+}
+
+.move .group4 {
+    width: 86.6%;
+    position: absolute;
+    top: 25.9%;
+    left: 0%;
+}
+
+.move .group5 {
+    width: 24.16%;
+    position: absolute;
+    top: 32.55%;
+    left: 76%;
+}
+
+.move .group6 {
+    width: 32.3%;
+    position: absolute;
+    top: 45.1%;
+    left: 55%;
+}
+
+.move .group7 {
+    width: 49.04%;
+    position: absolute;
+    top: 38.7%;
+    left: 14%;
+}
+
+.move .water {
+    width: 22.01%;
+    position: absolute;
+    top: 41.3%;
+    left: 12%;
+}
+
+.watermove {
+    -webkit-animation: watermove 25s linear both infinite;
+    -moz-animation: watermove 25s linear both infinite;
+}
+
+.move .ship {
+    width: 17.94%;
+    position: absolute;
+    top: 42%;
+    left: 18%;
+}
+
+.shipmove {
+    -webkit-animation: shipmove 25s linear both infinite;
+    -moz-animation: shipmove 25s linear both infinite;
+}
+
+.move .group8 {
+    width: 54.78%;
+    position: absolute;
+    top: 40.5%;
+    left: 0%;
+}
+
+.move .tree7 {
+    width: 28.94%;
+    position: absolute;
+    top: 49.4%;
+    left: 21%;
+}
+
+.move .lotusleaf {
+    width: 61.96%;
+    position: absolute;
+    top: 38.9%;
+    left: 0%;
+}
+
+.move .leafup {
+    width: 30.14%;
+    position: absolute;
+    top: 57.8%;
+    left: 70%;
+    -webkit-animation: leafupmove 7s linear both infinite;
+    -moz-animation: leafupmove 7s linear both infinite;
+}
+
+.move .leafdown {
+    width: 85.65%;
+    position: absolute;
+    top: 59.6%;
+    left: 0%;
+    -webkit-animation: leafdownmove 10s linear both infinite;
+    -moz-animation: leafdownmove 10s linear both infinite;
+}
+
+.move .leafwater {
+    width: 63.4%;
+    position: absolute;
+    top: 58.9%;
+    left: 8%;
+    -webkit-animation: leafwatermove 11s linear both infinite;
+    -moz-animation: leafwatermove 11s linear both infinite;
+}
+
+.move .leaf9 {
+    width: 80.62%;
+    position: absolute;
+    top: 67.8%;
+    left: 0%;
+    -webkit-animation: leaf9move 10s linear both infinite;
+    -moz-animation: leaf9move 10s linear both infinite;
+}
+
+.move .group9 {
+    width: 25.36%;
+    position: absolute;
+    top: 39.6%;
+    left: 0%;
+}
+
+.move .group10 {
+    width: 37.80%;
+    position: absolute;
+    top: 75.9%;
+    left: 48%;
+}
+
+.move .snow10 {
+    width: 300%;
+    position: absolute;
+    top: 75.9%;
+    left: 0%;
+    -webkit-animation: snowing 10s linear both infinite;
+    -moz-animation: snowing 10s linear both infinite;
+}
+
+.move .snow11 {
+    width: 300%;
+    position: absolute;
+    top: 82.8%;
+    left: 0%;
+    -webkit-animation: snowing 10s linear both infinite;
+    -moz-animation: snowing 10s linear both infinite;
+}
+
+.move .group11 {
+    width: 94.26%;
+    position: absolute;
+    top: 92.8%;
+    left: 0%;
+}
+
+.move .snow12 {
+    width: 300%;
+    position: absolute;
+    top: 93.2%;
+    left: 0%;
+    -webkit-animation: snowing 10s linear both infinite;
+    -moz-animation: snowing 10s elinear both infinite;
+}
+
+.move .text1 {
+    opacity: 0;
+    width: 52%;
+    position: absolute;
+    top: 4.6%;
+    left: 5%;
+}
+
+.move .text2 {
+    opacity: 0;
+    width: 52%;
+    position: absolute;
+    top: 12.6%;
+    right: 0%;
+}
+
+.move .text3 {
+    opacity: 0;
+    width: 50%;
+    position: absolute;
+    top: 22.8%;
+    left: 0%;
+}
+
+.move .text4 {
+    opacity: 0;
+    width: 48%;
+    position: absolute;
+    top: 29.4%;
+    right: 3%;
+}
+
+.move .text5 {
+    opacity: 0;
+    width: 50%;
+    position: absolute;
+    top: 37.5%;
+    right: 10%;
+}
+
+.move .text6 {
+    opacity: 0;
+    width: 46%;
+    position: absolute;
+    top: 44.5%;
+    right: 10%;
+}
+
+.move .text7 {
+    opacity: 0;
+    width: 46%;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+}
+
+.move .text8 {
+    opacity: 0;
+    width: 46%;
+    position: absolute;
+    top: 60%;
+    right: 23%;
+}
+
+.move .text9 {
+    opacity: 0;
+    width: 48%;
+    position: absolute;
+    top: 70.7%;
+    right: 20%;
+}
+
+.move .text10 {
+    opacity: 0;
+    width: 48%;
+    position: absolute;
+    top: 77.5%;
+    left: 1%;
+}
+
+.move .text11 {
+    opacity: 0;
+    width: 46%;
+    position: absolute;
+    top: 87%;
+    left: 3%;
+}
+
+.move .text12 {
+    opacity: 0;
+    width: 46%;
+    position: absolute;
+    top: 92.7%;
+    left: 3%;
+}
+
+.buttonbox {
+    opacity: 0;
+    pointer-event: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none
+}
+
+.buttontext {
+    width: 22px;
+    height: 90px;
+    position: absolute;
+    bottom: 40px;
+    left: 26%;
+    pointer-event: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    background: url('../images/button.png') 100% 100%;
+    background-size: cover;
+    position: absolute;
+    bottom: 7%;
+    left: 8%;
+    pointer-event: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none
+}
+
+#lastpage {
+    position: fixed;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 600;
+}
+
+#lastpage .lastbg {
+    width: 100%;
+    height: 100%;
+}
+
+#lastpage .share {
+    position: absolute;
+    width: 11%;
+    top: 59%;
+    left: 5%;
+}
+
+#lastpage .backhome {
+    position: absolute;
+    width: 11%;
+    top: 35%;
+    left: 5%;
+}
+
+.tracloud1-1 {
+    opacity: 1;
+    position: absolute;
+    top: 0%;
+    left: 46%;
+    width: 60%;
+}
+
+.tracloud1-2 {
+    opacity: 1;
+    position: absolute;
+    top: 0%;
+    left: -5%;
+    width: 63%;
+}
+
+.tracloudmove1-1 {
+    -webkit-animation: lasttracloudmove1 5.5s ease-out both 1;
+    -moz-animation: lasttracloudmove1 5.5s ease-out both 1;
+}
+
+.tracloudmove1-2 {
+    -webkit-animation: lasttracloudmove2 5.5s ease-out both 1;
+    -moz-animation: lasttracloudmove2 5.5s ease-out both 1;
+}
+
+#shade {
+    position: fixed;
+    background-color: black;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    z-index: 650;
+    display: none;
+}
+
+#shade img {
+    position: absolute;
+    width: 30%;
+    top: 3%;
+    left: 60%;
+}
+
+.lastin {
+    -webkit-animation: lastin 4s linear both 1;
+    -moz-animation: lastin 4s linear both 1;
+}
+
+.lastout {
+    -webkit-animation: lastout 4s linear both 1;
+    -moz-animation: lastout 4s linear both 1;
+}
+
+
+/*音乐按钮对应样式*/
+
+.music_btn {
+    position: fixed;
+    bottom: 3%;
+    right: 4%;
+    width: 16%;
+    z-index: 700;
+}
