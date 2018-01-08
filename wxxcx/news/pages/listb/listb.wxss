@@ -1,0 +1,63 @@
+/**listb.wxss**/
+
+/*优化后的样式*/
+swiper-item image {
+  width:750rpx;
+}
+.listWrap {
+  width:705rpx;
+  padding:0 25rpx;
+  padding:30rpx 25rpx;
+  border-bottom:1px solid #e5e5e5;
+}
+.listThumb {
+  width:260rpx;
+  height:160rpx;
+  display:block;
+  float:left;
+}
+.listInfo {
+  height:160rpx;
+  width:435rpx;
+  display:inline-block;
+  padding-left:10rpx;
+  position: relative;
+}
+.listTitle {
+  color:#333;
+  font-size:36rpx;
+  font-weight:600;
+}
+.listKeyAdd {
+  font-size:30rpx;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
+.addFN {
+  color: #808080;
+  display:block;
+  float:left;
+}
+.addKY {
+  color: #d9c599;
+  float:right;
+  display:block;
+  margin-right:15rpx;
+}
+
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
+.loading {
+-webkit-transform: rotate(360deg);
+animation: rotation 1.5s linear infinite;
+-moz-animation: rotation 1.5s linear infinite;
+-webkit-animation: rotation 1.5s linear infinite;
+-o-animation: rotation 1.5s linear infinite;
+width:60rpx;
+height:60rpx;
+display:block;
+margin:10rpx auto;
+}

@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/lista/lista",
+    "pages/listb/listb",
+    "pages/view/view"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "看新闻",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar":{
+    "color": "#8a8a8a",
+    "selectedColor": "#d81e06",
+    "list":[{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "img/indexD.png",
+      "selectedIconPath": "img/indexS.png"
+    },{
+      "pagePath": "pages/lista/lista",
+      "text": "娱乐",
+      "iconPath": "img/listaD.png",
+      "selectedIconPath": "img/listaS.png"
+    },{
+      "pagePath": "pages/listb/listb",
+      "text": "财经",
+      "iconPath": "img/listbD.png",
+      "selectedIconPath": "img/listbS.png"
+    }]
+  }
+}

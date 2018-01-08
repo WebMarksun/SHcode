@@ -1,0 +1,16 @@
+<!--listb.wxml-->
+
+<!--最新内容-->
+<block wx:for="{{newsList}}" >
+<navigator class="listWrap" url="/pages/view/view?id={{item.id}}">
+<image class="listThumb" src="http://tnfs.tngou.net/image{{item.img}}" />
+<view class="listInfo">
+  <view class="listTitle">{{item.title}}</view>
+  <view class="listKeyAdd"><text class="addFN">{{item.fromname}}</text><text class="addKY">{{item.keywords}}</text></view>
+</view>
+</navigator>
+</block>
+<block wx:if="{{loading}}">
+<image class="loading" src="/img/loading.png" />
+<!-- <text>没有更多内容</text> -->
+</block>
