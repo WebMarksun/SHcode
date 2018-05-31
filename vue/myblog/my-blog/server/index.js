@@ -31,9 +31,10 @@ server.use(cookieParser);
 }
 )()
 //route
-server.use('/admin',require('./api/admin/login.js')())
+server.use('/login',require('./api/admin/login.js')())
+server.use('/edit',require('./api/admin/edit.js')())
 server.use('/label',require('./api/web/label.js')())
 server.use('/files',require('./api/web/files.js')())
-server.use('/admin',require('./api/web/admin.js')())
+server.use('/home',require('./api/web/home.js')())
 
 // server.use(static('./static/'))
