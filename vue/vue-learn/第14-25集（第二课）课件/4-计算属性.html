@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app">
+			<h1>启动项目</h1>
+			{{m}}
+			<p :miaov="m"></p>
+			<hr>
+			<p v-for="item in filterList">{{item.age}}</p>
+		</div>
+		<script>
+			/*
+				指令
+					行间自定义属性 v-
+
+					v-bind :
+					v-for
+					v-if
+					v-show
+					v-on  @
+
+				计算属性
+					挂载实例上
+					抽离对数据在模板中过多逻辑，保持模板的简洁
+
+				属性名：{
+					get(){
+						return 值
+					},
+					set(newValue){
+	
+					}
+				}
+
+				只写一个函数
+				属性名(){  // getter
+					return 值; 
+				}
+			*/
+			var message = 'hello,vue';
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					m: message,
+					list: [
+						{
+							age:30
+						},
+						{
+							age:20
+						},
+						{
+							age: 18
+						}
+					]
+				},
+				computed:{
+					filterList(){
+						return this.list.filter(item => item.age < 30)
+					}
+				}
+			});
+			setTimeout(function (){
+				vm.m = 100;	
+			},2000)
+
+
+			var val = 1;
+			var obj = {
+				get a(){
+					console.log('取值');
+					return val
+				},
+				set a(newValue){
+					console.log('设置值',newValue);
+					val = newValue;
+				}
+			}
+			obj.a = 'miaov';
+			console.log(obj.a);
+
+		</script>
+	</body>
+</html>

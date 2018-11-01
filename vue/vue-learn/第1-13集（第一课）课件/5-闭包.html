@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script type="text/miaov">
+			使用var
+				1. 变量提升
+				2. 同一个作用域下会重复声明多个相同名的变量
+				3. 挂载window上
+			使用let
+				1. 不会 变量提升
+				2. 不会 同一个作用域下会重复声明多个相同名的变量
+				3. 不会 挂载window上
+
+			使用const
+				特性同let
+				声明变量，变量存的值不可能改
+		</script>
+		<script>
+			
+			
+
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+		<script>
+			let lis = document.querySelectorAll('ul li');
+			/*for( var i = 0; i < lis.length; i++ ){
+				fn(i)
+			}
+			function fn(i){
+				lis[i].onclick  = function (){
+					alert(i)	
+				}
+			}*/
+			// 每一次进入到循环，都会重新声明一个i
+			// i的值是上一次循环结束后的i作为这一次i的初始值
+
+			for( let i = 0; i < lis.length; i++ ){
+				lis[i].onclick  = function (){
+					alert(i)	
+				}
+			}
+
+			{	//不会报错因为这样的c会自动成为全局变量
+				c=10
+				//不会报错因为会有变量提升
+				b=3;
+				var  b=4;
+				// 在这个区域中，只有声明a之后才能使用.这个区域中下边用let定义了a，a无法进行变量提升也不会自动成为全局变量
+				a = 10;
+				let a = 10;
+
+			}
+			
+		</script>
+	</body>
+</html>

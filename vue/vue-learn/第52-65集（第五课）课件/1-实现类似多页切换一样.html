@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<a href="#home">home</a>
+		<a href="#about">about</a>
+		<a href="#kecheng">kecheng</a>
+		<hr>
+		<div id="box">
+			<h2>要呈现不同内容</h2>
+		</div>
+		<script>
+
+			// 定义三个视图
+			var views = {
+				home: {
+					template: `<div>这是home页面</div>`
+				},
+				about: {
+					template: `<div>这是about页面</div>`
+				},
+				kecheng: {
+					template: `<div>这是kecheng页面</div>`
+				}
+			}
+
+
+			var flag = 'home'
+			function getHash(){
+				var hash = window.location.hash;
+				if(hash){
+					flag = hash.slice(1)
+				}
+			}
+			getHash();
+
+			//box.innerHTML = views[flag].template
+
+			window.addEventListener('hashchange',function (){
+				console.log('hash改变了');
+				getHash();	
+				//box.innerHTML = views[flag].template
+			})
+
+		</script>
+	</body>
+</html>

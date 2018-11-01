@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+
+			// 数组中的数字累加
+
+			/*var n = 0;
+			for( var i = 0; i < arr.length; i++ ){
+				n += arr[i];
+			}
+
+			console.log(n);*/
+			/*
+				数组.reduce(callback[,初始值])
+
+					callback会接受两个参数
+						item1 item2
+
+						没给reduce写初始值，callback会默认第一次接受数组中的前两个值
+
+
+			*/
+			var arr = [1,2,3,4,5,6,7];
+			/*
+				执行callback
+					第一次：接收数组中前两个值 
+					第二次开始，第一个参数是上一次执行的回调函数的返回值，第二个参数从数组中取
+					。。。。
+			*/
+			var n = arr.reduce(function (item1,item2){
+				console.log(item1,item2);	
+				return item1 + item2
+			})
+
+			console.log(n);
+
+			let newarr = [2,4,6,8,10,12];
+			let all = newarr.reduce((item1,item2)=>{
+				console.log(item1,item2)
+				return item2+item1
+			},100)
+			console.log(all)
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

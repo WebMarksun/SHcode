@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			// 传统函数中this指向和调用的方式有关系
+			function fn(){
+				console.log(this);	
+			}
+
+			fn();//window
+
+			document.onclick = fn;//#document
+
+			let o = {f:fn}
+
+			o.f()//{f:f}
+			
+
+			o.f.call([1,2,3,4,5])//[1,2,3,4,5]
+
+			document.onclick =  function() {
+				var self = this;//this:document
+				console.log(this);//document
+				setTimeout( function(){
+					console.log(this);	//window
+				},1000)
+				setTimeout( function(){
+					console.log(self);	//document
+				},1000)
+			}
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				forEach
+				map
+				filter
+			*/
+
+			
+			let arr = [1,2,3,4,5,6];
+
+			// 如果这个数组中，每一项都大于5，返回true，否则返回false
+
+			// every这个就是每一项都要符合给定的条件，如果有一个不符合，就返回false，都符合了返回true
+			let bl = arr.every(function (item){
+				return item > -1	
+			})
+
+			console.log(bl);
+			// some这个就是都要有一项符合给定的条件，就返回true,都不符合返回false
+			let bl2 = arr.some(function (item){
+				return item > 5	
+			})
+
+			console.log(bl2);
+
+
+
+			let arrmy = [1,3,4,5,5,6];
+			let newarrmy = arrmy.every(item=>item>5);
+			console.log(newarrmy)
+			let newsomearr = arrmy.some(item => item>5)
+			console.log(newsomearr)
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

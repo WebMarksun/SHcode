@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app">
+			<h1>启动项目</h1>
+			{{m}}
+			<p :miaov="m"></p>
+		</div>
+		<script>
+			/*
+				指令
+					行间自定义属性 v-
+
+					v-bind :
+					v-for
+					v-if
+					v-show
+					v-on  @
+			*/
+			var message = 'hello,vue';
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					m: message
+				}
+			});
+			setTimeout(function (){
+				vm.m = 100;	
+			},2000)
+
+		</script>
+	</body>
+</html>

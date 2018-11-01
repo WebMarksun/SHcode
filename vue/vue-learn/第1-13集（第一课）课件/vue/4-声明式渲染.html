@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<p miaov='m'>{{m}}</p>	
+			<p v-bind:miaov='m'>{{m}}</p>	
+			<p v-bind:miaov='1+1'>{{m}}</p>	
+		</div>
+		<script>
+			
+			// 声明式渲染
+			/*
+				1. DOM状态只是数据状态的一个映射
+				2. 所有的逻辑尽可能在状态的层面去进行
+				3. 当状态改变了，view会被框架自动更新到合理的状态
+			*/
+			
+			new Vue({
+				el: '#app',
+				data:{
+					m: 'hello'
+				}
+			})
+
+		</script>
+	</body>
+</html>

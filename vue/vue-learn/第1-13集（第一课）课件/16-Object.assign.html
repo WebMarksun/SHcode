@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// Object.assign(target,对象1，对象2，，，，);
+			// 从第二参数对象开始，把之后的对象的属性，都合并到target上
+
+			let o = {a:1};
+			Object.assign(o,{a:10,b:1},{c:1});
+
+			console.log(o);
+
+			let obj ={a:1,b:2};
+			var obj2 = {};
+			let newObj = Object.assign(obj2,obj)
+			// 返回值是，第一个对象
+			console.log(newObj === obj2);//true
+			console.log(newObj === obj);//false
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,4 @@
+解压project目录，打开命令窗口，之后，先安装模块
+	npm install
+安装之后，启动项目
+	npm run dev

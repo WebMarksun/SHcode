@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				forEach
+				map
+				filter
+			*/
+
+			// 循环，通过小标取值
+
+			let arr = ['a','b','c'];
+
+			let forEachRetrun = arr.forEach(function (item,index){
+				console.log(item,index);	
+			});
+
+			console.log(forEachRetrun);
+			// map的返回值是一个数组，数组的个数和操作的数组一样
+			// map返回的数组的每一项是回调函数的返回值
+			let mapReturn  = arr.map(function (item,index){
+				console.log(item,index);
+				return 1;
+			})
+
+			console.log(mapReturn);
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app" v-cloak>
+			<h1>在这里渲染内容</h1>
+			{{m}}
+		</div>
+		<script>
+
+			// 把body中的html作为模板，先在浏览器中解析，vue会拿到这块内容，内部进行编译，把指令 {{}} 取值，编译之后把数据和模板结合起来，再替换调用之前的内容。
+			/*
+				<div id="app">
+					<h1>在这里渲染内容</h1>
+					{{m}}
+				</div>
+
+				mount挂载 编译
+				<div id="app">
+					<h1>在这里渲染内容</h1>
+					hello,vue
+				</div>	
+
+			*/
+
+			var message = 'hello,vue';
+			// 根实例 没有写el，只是构建实例，并没有挂载模板上
+			var vm = new Vue({
+				data: {
+					m: message
+				}
+			});
+
+			// 结合模板
+			setTimeout(function (){
+				vm.$mount('#app')	
+			},1000)
+
+
+
+			var ms = new Vue({
+				el:'#app',
+				data:{
+					m:message
+				}
+			})
+		</script>
+	</body>
+</html>

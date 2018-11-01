@@ -1,0 +1,94 @@
+nodejs
+安装 node 
+https://nodejs.org/en/
+
+ 测试
+ 	命令窗口
+ 		输入 node -v 出现版本号
+
+ node是专门运行js代码
+
+ npm 包（模块）管理器 npm -v
+
+ ---------------------------------------------
+
+ npm init 生成package.json 用来描述项目用到的模块和别的信息
+
+ npm install 下载模块 简写为 npm i
+
+ npm install <模块名字> 
+ 	参数 ： --save(-S)   加入到生产依赖中
+ 			--save-dev (-D) 加入到开发依赖中
+ 			-g globle 全局安装，可以使用命令
+
+ 使用命令之后会创建文件node_modules
+
+ npm uninstall <模块名字> 写在模块
+ npm update 更新模块
+
+ 多次安装不成功 清一下npm的缓存
+ npm cache clean -f
+
+ 课件中是不出现node_modules需要手动安装 npm i
+
+ 模块
+ 	一个文件就是一个模块
+ 	目录模块
+ 	内置模块
+
+ CommonJS规范
+ 	一个模块导入和导出
+
+ 	var http = require('模块路径/模块名字')
+
+ 	导出
+ 		module.exports挂载要导出的方法
+
+vue-cli
+ -----------------
+ 仓库：https://github.com/vuejs/vue-cli
+ 安装
+ 	npm install  vue-cli@2.9.3 -g
+
+ 测试 vue -V
+
+ 下载模板 vue init webpack <project-name（未来会在本机创建目录，webpack的模板放在里面）>
+
+
+初次安装的可能会少下边两个模块
+	webpack-dev-server
+	webpack
+
+	npm i webpack-dev-server@2 -g
+	npm i webpack@3 -g
+
+
+使用vuex
+	状态就是数据
+
+	https://vuex.vuejs.org/zh/
+
+	安装 vuex npm i vuex -save
+
+	mian.js引入vuex
+		import Vuex from 'vuex'
+
+	把vuex作为vue的插件
+		Vue.use(Vuex)
+
+	实例化vuex
+		var store = Vuex.Store({
+			state: {}  // 应用的状态
+			mutations:{} 改变状态
+			actions:{} 异步操作
+			getters: {} 抽离处理state的逻辑,类似于组件中计算属性
+		})
+
+	注入到根实例中
+		new Vue({
+			...
+			store:store
+		})
+
+	在每个组件的实例上都可以拿到 $store 就是实例上的属性
+

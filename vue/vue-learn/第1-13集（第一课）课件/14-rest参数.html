@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// rest 参数
+			// 语法:写在形参的位置 ...变量名
+			// 作用，是把剩余的实参放在数组中
+			function fn(...m){
+				console.log(arguments);	 // 实参的集合 类数组 Arguments(5)
+				console.log(m);//Array(5)
+			}
+
+			fn(1,2,3,4,5)
+
+			let f = (a,...miaov) => {
+				console.log(arguments);	 //error:arguments is not defined
+				console.log(miaov);//Array(3)
+			}
+
+			f(1,2,3,4)
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				display: none;
+			}
+			.yellow {
+				background: yellow;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+	<body>
+		<!--是Vue的模板-->
+		<div id="app"><!-- 
+			<button @click="m = '123'">改变</button>
+			<p v-bind:message="m">{{m}}</p> -->
+
+			<input type="" v-model="m">
+			<p>{{m}}</p>
+		</div>
+		<script>
+			
+			/*
+				MVVM
+					m model 数据模型 {} [] {a:{}}
+					v view  视图模型  html模板
+
+					vm view - model 视图-数据模型  vue中的实例和模板中的指令
+
+					m和v是分离的，互不影响
+					都要通过vm操作
+			*/
+
+			new Vue({
+				el: '#app',
+				data: {
+					m: 'hello'
+				}
+			})
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li,
+			h2 {
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			.list>div {
+				margin-bottom: 10px;
+			}
+			.list .show {
+				display: block;
+			}
+			.list .red {
+				background: red;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./css/qq.css" />
+		<script src="../../src/vue.js"></script>
+	</head>
+
+	<body onselectstart="return false;">
+		<div class="wrap" id="app">
+			<div class="list">
+				<div v-for="item,index in qqData">
+					<h2 
+						@click="choose(index)"
+						:class="isClass(index)"
+					>
+					<span></span>{{item.big_title}}</h2>
+					<ul :style="isStyle(index)">
+						<li v-for="option in item.list">
+							{{option.title}}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+
+			// 数据  设计数据结构  [] {}
+
+			var data = [
+				{
+					big_title: '我的好友1',
+					list: [
+						{
+							title: 'leo是个胖子'
+						},
+						{
+							title: '123'
+						}
+					]	
+				},
+				{
+					big_title: '我的好友2',
+					list: [
+						{
+							title: 'leo是个胖子'
+						},
+						{
+							title: '123'
+						}
+					]	
+				},
+				{
+					big_title: '我的好友3',
+					list: [
+						{
+							title: 'leo是个胖子'
+						},
+						{
+							title: '123'
+						}
+					]	
+				}
+			]
+
+			new Vue({
+				el: '#app',
+				data: {
+					qqData: data,
+					currentShowIndex: -1 // 记录哪一个ul显示出来了
+				},
+				methods: {
+					choose(i){
+						// 上一次和这一次点击的是同一个
+						/*if(this.currentShowIndex === i){
+							this.currentShowIndex = -1;
+						}else{
+							this.currentShowIndex = i;
+						}*/
+						this.currentShowIndex = this.currentShowIndex === i ? -1 : i
+					},
+					isClass(m){
+						return {
+							red: this.currentShowIndex === m
+						}
+					},
+					isStyle(m){
+						return {
+							display: this.currentShowIndex === m ? 'block' : 'none',
+							background: this.currentShowIndex === m ? 'blue' : ''
+						}
+					}
+				}
+			})
+			
+
+		</script>
+	</body>
+
+</html>

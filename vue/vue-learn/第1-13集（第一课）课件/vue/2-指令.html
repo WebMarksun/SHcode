@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<p miaov='m'>{{m}}</p>	
+			<p v-bind:miaov='m'>{{m}}</p>	
+			<p v-bind:miaov='1+1'>{{m}}</p>	
+		</div>
+		<script>
+			let message = 'hello,vue';
+			/*
+				理解指令
+					1. 是一种特殊的自定义行间属性，以v-开头
+					2. 将数据和DOM做关联，当表达式的值改变时，响应式地作用在视图
+					3. 预期的值为javascript表达式
+
+				v-bind
+					绑定数据
+					语法：v-bind:属性名="表达式"
+			*/
+			
+			new Vue({
+				el: '#app',
+				data: {  
+					m: message 
+				}
+			})
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app">
+			<h1>启动项目</h1>
+			{{m}}
+			<input id="edit" ref="miaov" />
+		</div>
+		<script>
+			/*
+				在Vue中不提倡操作DOM，可以操作DOM
+					不得不操作DOM	
+
+						input focus
+
+						动画
+
+						window绑定事件
+						document绑定事件
+				生命周期函数
+					挂载结束之后获取
+
+					mounted(){
+	
+					}
+
+				实例上有$开头的属性，是Vue内置的属性
+
+				ref 定义在行间属性中，类似是id一样
+				找元素通过实例的$refs去找
+
+			*/
+			var message = 'hello,vue';
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					m: message
+				},
+				mounted(){
+					console.log('mounted');
+					document.getElementById('edit').onkeydown = function (){
+						console.log('down2');
+					}
+					this.$refs.miaov.onkeydown = function (){
+						console.log('down1');
+					}
+					console.log(this.$refs.miaov);
+				}
+			});
+
+		</script>
+	</body>
+</html>

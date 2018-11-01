@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				forEach
+				map
+				filter
+			*/
+
+			let arr = [
+				{
+					name:'leo1'
+				},
+				{
+					name:'leo2'
+				}
+			];
+			let str = '';
+			for( var i = 0; i < arr.length; i++ ){
+				str += `<li>${arr[i].name}</li>`
+			}
+
+			console.log(str);
+
+			let arrStr = arr.map(function (item){
+				return `<li>${item.name}</li>`	
+			}).join('')
+
+			console.log(arrStr);
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

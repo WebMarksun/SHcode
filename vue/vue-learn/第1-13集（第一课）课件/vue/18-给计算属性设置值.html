@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.red {
+				background: red;
+			}
+			.rontSize {
+				font-size: 50px;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<input type="checkbox" v-model='reverseM'/>
+		</div>
+		<script>
+			let message = 'hello,vue';
+			
+			// 更改计算属性的值
+			/*
+				属性操作
+					取值
+					设置值
+			*/
+			
+			let vm = new Vue({
+				el: '#app',
+				data: {  
+					message
+				},
+				computed: {
+					reverseM(){
+						return !!message
+					}
+				}
+			})
+			// 可以把对象的属性设置成getter和setter的形式
+			// 取值的时候触发getter对应就是get函数
+			// 设置值的时候触发setter对应就是set函数
+
+			var value = 1;
+			var o = {
+				//a:1
+				get a(){
+					console.log('取值');
+					return value
+				},
+				set a(newValue){
+					console.log('设置值');
+					console.log(newValue);
+					value = newValue;
+				}
+			}
+			console.log(o);
+			console.log(o.a);
+			document.onclick = function (){
+				o.a = 1000;	
+				console.log(o.a);
+			}
+			
+
+			
+
+		</script>
+	</body>
+</html>

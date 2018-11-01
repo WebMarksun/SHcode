@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				箭头函数特性
+					1. 函数体内的this值，绑定的定义时所在的作用域的this
+					2. 不可以当作构造函数
+					3. 不可以使用arguments对象
+
+			*/
+			var f = () => {}
+			// new f()
+			// 箭头函数体内的this值，绑定的定义时所在的作用域的this
+			document.onclick =  () => {
+				var self = this;//this:window
+				console.log(this);
+				setTimeout( () => {
+					console.log(this);	//window
+				},1000)
+			}		
+			
+			document.onclick =  function() {
+				var self = this;//this:document
+				console.log(this);
+				setTimeout( () => {
+					console.log(this);	//document
+				},1000)
+			}		
+
+
+			let o = {
+				//当前作用域没有this所以向上找全局变量的this
+				f: () => {
+					console.log(this);//window
+				}
+			}
+
+			o.f();
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+	</body>
+</html>

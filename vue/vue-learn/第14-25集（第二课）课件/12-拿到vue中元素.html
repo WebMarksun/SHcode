@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app">
+			<h1>启动项目</h1>
+			<button @click="getFocus">获取焦点</button>
+			<p>{{m}}</p>
+			<input id="edit" ref="miaov" v-show="show" />
+	
+			<ul>
+				<li ref="ketang" v-for="item in 10">测试{{item}}</li>
+			</ul>
+
+		</div>
+		<script>
+			/*
+				在Vue中不提倡操作DOM，可以操作DOM
+					不得不操作DOM	
+
+						input focus
+
+						动画
+
+						window绑定事件
+						document绑定事件
+				生命周期函数
+					挂载结束之后获取
+
+					mounted(){
+	
+					}
+
+				实例上有$开头的属性，是Vue内置的属性
+
+				ref 定义在行间属性中，类似是id一样
+				找元素通过实例的$refs去找
+
+				如果ref是用v-for上，$refs中会存的是一个数组
+					ref = 'ketang'
+
+					{
+						ketang: [li,li]
+					}
+
+			*/
+
+			/*
+				数据更新
+				元素操作
+			*/
+			var message = 'hello,vue';
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					m: message,
+					show: false
+				},
+				methods: {
+					getFocus(){
+						// 不是设置一个更新一条，而是设置完毕一次更新
+						// 异步更新
+						// setTimeout promise
+						this.m = 123;
+						this.show = true;
+
+						// 数据更新完了
+						//Vue.nextTick() 
+						this.$nextTick( () => {
+							this.$refs.miaov.focus();	
+						})
+
+						console.log(this.$refs);
+						console.log(this.$refs.miaov);
+					}
+				}
+			});
+
+			// 异步的 等主线程上空闲了，才会执行定时器的内容
+			setTimeout(function (){
+				console.log('我执行了');	
+			},0)
+
+			for( var i = 0; i < 10000; i++ ){
+				console.log(1);
+			}
+
+		</script>
+	</body>
+</html>

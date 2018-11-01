@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				display: none;
+			}
+			.yellow {
+				background: yellow;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			
+			<input 
+				type="text" 
+				:value="val"
+				@input="changeValue"
+			/>
+			<p>{{val}}</p>
+			<hr />
+			<input v-model="val2" type="text" />
+			<p>{{val2}}</p>
+			<hr>
+			<h2>v-mode就相当于以下</h2>
+			<input type="text" 
+				:value="val3" 
+				@input="(e)=> val3=e.target.value" 
+			/>
+			<p>{{val3}}</p>
+		</div>
+		<script>
+			// 表单元素，天生就可以和用户进行交互
+			/*
+				v-model
+					语法：v-model="表达式"
+					在表单元素上创建双向数据绑定
+					会根据控件类型自动选取正确的方法来更新元素交互的值
+					负责监听用户的输入事件以更新数据
+
+					v-model 就相当于
+						动态渲染value值
+						@input=""
+						在事件中改变值
+
+			*/
+
+			new Vue({
+				el: '#app',
+				data: {
+					val: 'hello',
+					val2: '',
+					val3:''
+				},
+				methods: {
+					changeValue(e){
+						console.log(e.target);
+						console.log(e.target.value);
+						this.val = e.target.value
+					}
+				}
+			})
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app"></div>
+		<script>
+			Vue.component('new-title',{
+				template: `<h2>世界杯</h2>`
+			})
+			Vue.component('item',{
+				template: `<li>新闻</li>`
+			})
+			Vue.component('list',{
+				template: `<ul>
+							<item></item>
+						</ul>`
+			})
+
+			/*Vue.component('App',{
+				template: `
+				<div id="app">
+					<new-title></new-title>
+					<list></list>
+				</div>	
+				`
+			})*/
+
+			var appOptions = {
+				template: `
+				<div id="app">
+					<new-title></new-title>
+					<list></list>
+				</div>	
+				`
+			}
+
+
+			new Vue({
+				el: '#app',
+				components:{
+					App: appOptions
+				},
+				template: '<App />'
+			})
+
+
+
+		</script>
+	</body>
+</html>

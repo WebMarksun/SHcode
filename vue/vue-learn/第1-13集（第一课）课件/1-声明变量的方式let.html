@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script type="text/miaov">
+			使用var
+				1. 变量提升
+				2. 同一个作用域下会重复声明多个相同名的变量
+				3. 挂载window上
+			使用let
+				1. 不会 变量提升
+				2. 不会 同一个作用域下会重复声明多个相同名的变量
+				3. 不会 挂载window上
+		</script>
+		<script>
+			// 声明变量
+			console.log(a);  // 变量提升
+			a++;
+			console.log(a);
+
+			var a = 10;
+			var a = 20;
+
+			console.log(a);
+
+			var miaov = 10;
+
+			console.log(window.miaov);
+
+			// let 声明变量
+			//console.log(ketang);
+			let ketang = 2000;
+			/*let ketang = 5000;
+
+			console.log(ketang);*/
+			console.log(window.ketang);
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

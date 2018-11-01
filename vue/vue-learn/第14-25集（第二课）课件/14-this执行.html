@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				this
+					跟函数调用方式有关
+
+					1. 直接调用 函数() this => window
+					2. 作为对象的属性 对象.函数()  this=> 调用函数的对象
+					3. 事件触发调用 element.onclick = 函数 this => 触发事件的元素
+					4. 定时器 setIntervar(fn) 函数 => window
+					5. new 函数 this => 创建实例
+
+				改变this执行
+					call apply  直接调用函数
+					bind 不直接调用函数
+
+			*/
+
+			
+
+			function fn(a,b,c){
+				console.log(this,a,b,c);
+			}
+
+			fn.call([1,2,3],1,2,3)
+			fn.apply({a:1},['a','b','c'])
+
+			var newF = fn.bind({l:1},1,2,3);
+
+			newF()
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

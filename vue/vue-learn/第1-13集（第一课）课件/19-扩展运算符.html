@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				扩展运算符
+					...对象
+
+					将一个数组转为用逗号分隔的参数序列
+			*/
+
+			var arr = [1,2,3,4,9,100,0];
+
+			// 数组中最大值 Math.max(1,2,3,)
+			console.log(Math.max([1,2,3]));
+			console.log(Math.max(...arr));  // 1,2,3
+
+			// 每一次改变一个属性，都会重新生成新对象
+			let user = {
+				name:'leo',
+				age: 30,
+				height: 180
+			}
+
+			// 把对象中的height改成170，生成新的对象
+
+			//let newUser = {...user,height: 170}
+			let newUser2 = {...user,age: 50}
+
+			console.log(newUser2);
+			//console.log(newUser2);
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

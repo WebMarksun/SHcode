@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// 封装函数，参数是可选的，给参数一个默认值
+			function add(a,b=1){
+				// 弊端，一旦传过来的参数，是解析为false的，返回的是左边的值
+				//b = b || 1;
+				// let b = 10; // 不能重复声明
+				return a + b;	
+			}
+
+			console.log(add(1,10));
+			console.log(add(1));
+			console.log(add(1,0));
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

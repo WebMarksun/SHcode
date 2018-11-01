@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<ul>
+				<li v-if="index !== 2" v-for="(item,index) in arr">
+					{{item}} - {{index}}
+				</li>
+			</ul>
+			
+			<div v-if="show">
+				我是否会渲染
+			</div>
+			<div v-show="show">
+				我是否会渲染
+			</div>
+
+		</div>
+		<script>
+			/*	
+				条件判断 根据条件的成立与否，来决定是否渲染/隐藏和显示这个元素
+					v-if
+					语法：v-if="表达式"
+						根据表达式的true或false，来决定这个元素要不要渲染
+
+					条件不成立，就不会渲染在DOM结构中
+
+					v-show
+					语法：v-show="表达式"
+						根据表达式的true或false，来决定这个元素隐藏和显示
+
+					频繁的切换元素显示和隐藏 v-show
+					在初始的时候，通过某个值来决定是否渲染某块内容 v-if
+			*/
+			var arr = ['a','b','c','d']
+			
+			let vm = new Vue({
+				el: '#app',
+				data:{ 
+					arr,
+					show: false
+				}
+			});
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+
+导航守卫
+	钩子函数
+
+三个位置
+
+	路由全局的位置
+		只要访问任何一个路径，都会执行这里钩子函数
+
+		router.beforeEach() 进入之前触发
+		router.afterEach(); 进入之后触发
+
+	路由配置中
+		访问特定的路径，才会执行钩子函数
+		{
+			path: '/a'
+			component:
+			beforeEnter(){} 进入之前触发
+		}
+
+	组件内
+		访问特定的路径，要渲染对应的组件，组件内的钩子才会触发
+		export default {
+			...
+			beforeRouteEnter(){} 进入之前触发
+			beforeRouteUpdate(){} 更新$route触发
+			beforeRouteLeave(){} 离开组件之前触发
+		}
+
+
+一个路由向另一个路由传入参数，可以选择使用queryString
+
+只能是简单少量的数据，不是是对象
+
+?a=1&b=3
+
+{
+	name:'',
+	query:{
+		a:1,
+		b:3
+	}
+}
+
+给激活状态的导航添加class
+
+router-link-exact-active 当前所在路径对应的导航是激活的
+	访问的是 /home/miaov 
+		routr-link的to为/home 导航是激活状态
+		routr-link的to为/home/miaov 导航是激活状态
+			router-link-exact-active
+			router-link-active
+
+router-link-active 激活的导航都会添加 
+	访问的是 /home routr-link的to为/home 导航就是激活状态
+	访问的是 /home/miaov 
+		routr-link的to为/home 导航是激活状态
+		routr-link的to为/home/miaov 导航是激活状态
+
+
+无论访问哪一个路径，/ 根路径都是激活状态
+	

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="./src/vue.js"></script>
+	<script type="text/x-template" id="modal-temp">
+				<div class="modal-example">
+			<div class="mask"></div>
+        	<div class="modal">
+				<div class="modal-header">
+					<h4>{{title}}</h4>
+				</div>
+				<div class="modal-content">
+					<div>
+						<slot>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input class="btn" type="button" :value="okValue"  />
+					<input class="btn" type="button" :value="cancelValue" />
+				</div>
+        	</div>
+      	</div>
+		</script>
+</head>
+
+<body>
+<div id="app">
+	<modal ok-value="Ok" title="警告">
+
+	</modal>
+</div>
+
+</body>
+<script>
+	Vue.component("modal", {
+		props:{
+			title:{
+				type:String,
+				default:'这是默认的标题'
+			},
+			okValue:{
+				type:String,
+				required:true
+			},
+			cancelValue:{
+				type:String,
+				default:"取消"
+			},
+
+		},
+		template: "#modal-temp"
+	})
+	var vm = new Vue({
+
+	})
+	vm.$mount("#app")
+</script>
+
+</html>

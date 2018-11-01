@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app">
+			<h1>启动项目</h1>
+			<div @click="parentTest">
+				<!-- 继续执行其父级元素的事件，不跳转 -->
+				<a href="http://www.baidu.com" @click.prevent="test">baidu</a> 
+				<!-- 只执行当前元素的事件，跳转 -->
+				<a href="http://www.baidu.com" @click.stop="test">baidu</a> 
+				<!-- 只执行执行当前元素的事件，不跳转 -->
+				<a href="http://www.baidu.com" @click.prevent.stop="test">baidu</a> 
+			</div>
+			<div @click.once="test2">只触发一次</div>
+			<h2>测试self</h2>
+			<div @click="test3">
+				test3
+				<div @click.self="test4" style="height: 300px;background:red;">
+					self
+					<p @click.stop>test4的父级</p>
+					<span>test4</span>
+				</div>
+			</div>
+
+			<h2>测试捕获</h2>
+			<div @click.capture="test5">
+				test5
+				<p @click="test6">test6</p>
+			</div>
+
+		</div>
+		<script>
+			var message = 'hello,vue';
+			/*
+				语法： 
+					v-on:事件名.事件修饰.事件修饰符 = '方法'
+
+				self 修饰符只能点击绑定事件的元素才会触发
+					当点击这里面子孙级元素，是不触发的
+			*/
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					m: message
+				},
+				methods: {
+					test(ev){
+						console.log('stop')
+						/*ev.stopPropagation();
+						ev.preventDefault();*/
+					},
+					parentTest(){
+						console.log('打印');
+					},
+					test2(){
+						console.log('123');
+					},
+					test4(){
+						console.log('test4');
+					},
+					test3(){
+						console.log('冒泡到了这里test3');
+					},
+					test5(){
+						console.log('捕获：先触发test5');
+					},
+					test6(){
+						console.log('目标test6');
+					}
+				}
+			});
+
+		</script>
+	</body>
+</html>

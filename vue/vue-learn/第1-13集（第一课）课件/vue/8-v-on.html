@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<button v-on:click="show=!show">按钮</button>
+			<button v-on:click="fn">按钮</button>
+			
+			<div v-if="show">
+				我是否会渲染
+			</div>
+			<div v-show="show">
+				我是否会渲染
+			</div>
+		</div>
+		<script>
+			/*	
+				
+				v-on指令绑定事件
+					语法
+						v-on:事件名 = '方法/代码'
+			*/
+			var arr = ['a','b','c','d']
+			
+			let vm = new Vue({
+				el: '#app',
+				data:{
+					show: false
+				},
+				methods: {  // 方法 可以在模板中直接调用的，也可以作为事件触发的事件处理函数
+					// 在methods重定义的方法，都会挂载实例上
+					//methods中这些方法的this都指向实例
+					fn(){
+						//alert(1)
+						console.log(this.show);
+
+						this.show = !this.show;
+
+					}
+				}
+			});
+
+
+
+		</script>
+	</body>
+</html>

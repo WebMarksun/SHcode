@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.list-body li:nth-child(even) {
+				background: yellow;
+			}
+			.list-body li:nth-child(odd) {
+				background: #fff;
+			}
+			.list-body li:hover {
+				background: green;
+			}
+			.list-body li.checkedColor {
+				background: green;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/baidu.css" />
+		<script src="../../src/vue.js"></script>
+	</head>
+
+	<body>
+		<div class="wrap" id="app">
+			<div class="baidu">
+				<ul class="list list-head">
+					<li>
+						<div>
+							<input type="checkbox" v-model='isCheckedAll' />全选
+						</div>
+						<span>歌单</span>
+						<span>歌手</span>
+						<span>专辑</span>
+					</li>
+				</ul>
+				<ul class="list list-body">
+					<li 
+						class="checkedColor" 
+						v-for="item in singerList"
+					>
+						<div><input type="checkbox" v-model="item.checked"></div>
+						<span>{{item.song}}</span>
+						<span>{{item.name}}</span>
+						<span>{{item.album}}</span>
+					</li>
+				</ul>
+				<div class="select">
+					<span class="selectAll">
+						<span>统计：</span>
+					</span>
+					<div class="others">
+						<span><em></em>歌手有：{{singerList.length}}位</span>
+						<span><em></em>专辑有{{totalAlbum}}张</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+
+			let data = [
+				{
+					id:Date.now()+Math.random(),
+					name: '邓紫棋',
+					song: '泡沫',
+					album: 10
+				},
+				{
+					id:Date.now()+Math.random(),
+					name: '王杰',
+					song: '泡沫',
+					checked: true,
+					album: 10
+				},
+				{
+					id:Date.now()+Math.random(),
+					name: '邓紫棋',
+					song: '泡沫',
+					album: 20
+				}
+			]
+
+			data.forEach(item => {
+				if( !('checked' in item) ){
+					item.checked = false;
+				}
+			})
+
+			console.log(data);
+
+			new Vue({
+				el: '#app',
+				data: {
+					singerList: data
+				},
+				computed:{ // 存取器（setter/getter） 存 set函数 取 get函数
+
+					isCheckedAll:{
+						get(){
+							console.log(this.singerList);
+							// 一旦singerList中的值发生变化，重新计算
+							return this.singerList.every(item => item.checked)
+						},
+						set(newValue){
+							this.singerList.forEach(item => item.checked = newValue)
+						}
+					},
+					totalAlbum(){
+						/*var n = 0;
+						this.singerList.forEach(item => {
+							n+= item.album
+						});*/
+
+						return this.singerList.reduce((num,item) => {
+							return num + item.album
+						},0);
+					}
+				}
+			})
+
+
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,163 @@
+
+单页应用
+	只有页面的
+
+
+localhost:8080/about
+
+-----------------
+
+about:function (){
+	return 1.html	
+}
+
+单页应用（SPA）
+	加载单个HTML页面，并在用户与应用程序交互时动态更新该页面
+
+单页应用（SPA）的优点
+前后端分离，前端关注界面，后端关注数据处理和存储
+减轻服务端压力，服务器只需要返回接口数据
+用户体验好、快，内容的改变不需要重新加载整个页面
+
+	多页应用 每次请求都会从新请求资源
+	单页应用 初始的时候请求一次，之后改变内容是局部刷新，不在请求公用的资源
+
+		首次加载内容会很多，影响页面出现
+		解决使用按需加载
+
+单页应用（SPA）的缺点
+
+	不利于SEO
+	初次加载耗时相对增多，导致首屏会出现一片空白
+
+服务端渲染ssr
+	同构
+加loading
+------------------------------------
+写单页应用
+
+指定好访问的路径 path /a /b /c
+
+路径对应什么样的组件 /a => abc.vue  /b => miaov.vue  /c => ketang.vue
+
+当访问不同的路径，就把对应的组件渲染在指定的位置
+
+使用vue-router库
+	作用 
+		配置一些规则 让一个路径对应一个组件
+		当在地址栏访问路径，就会把组件渲染在指定的位置
+
+--------------------------------
+
+过程
+	安装 npm i vue-router -S
+
+	引入 	import VueRouter from 'vue-router'
+	作为插件 Vue.use(VueRouter)
+	创建实例
+		var router = new VueRouter({
+			//配置规则
+			routes:[
+				{
+					path:
+					component:
+				}
+			]
+		})
+	注入根实例
+		new Vue({
+			...
+			router
+		})
+
+低版本中使用hash模式，高版本可以选择会用history模式
+
+-----------------------------------------
+
+在vue-router暴露两个全局的组件
+router-view 
+	当访问时候，把匹配到的路径对应的组件，替换在router-view 的位置
+router-link
+	当点击导航时候，在不刷新页面的情况下，切换路径
+
+
+------------------------------------
+
+path 
+	/ 根路径
+	/about 一级导航
+	/class 一级导航
+	/css   一级导航
+
+http://localhost:8080/class/js/h/j
+
+
+二级（嵌套）路由
+
+{
+	path:
+	component
+	children:[
+		{
+			path: '',
+			children:[
+				{
+
+				}
+			]
+		}
+	]
+}
+
+
+
+
+
+
+
+
+------------------------------
+
+路由信息对象
+	记录当前路径中信息的（信息是vue-router提供）
+
+	获取  this.$route
+
+当路径发生变化，this.$route一定会发生变化，即便是组件不会重新渲染
+
+--------------
+session history 会话历史记录
+
+
+-------------------
+按需加载 懒加载
+
+加载访问路径对应组件的js代码，没有访问的不加载，只有在访问到的时候再加载
+
+
+-----------------
+
+
+
+// history模式
+
+在浏览器端可以写成path的形式，并且不刷新页面
+
+原生的方法 history.pushState({},null,path)
+
+可以进行前进后退不刷新页面
+
+http://localhost:8080/
+
+https://www.bilibili.com/index.html#/v/anime/finish/
+
+https://www.bilibili.com/v/anime/finish/
+https://www.bilibili.com/v/game/mobile
+
+
+http://localhost:3000/cnnode/index.html
+
+
+https://www.bilibili.com/users/1  user页面
+https://www.bilibili.com/users/2  user页面
+https://www.bilibili.com/users/3  user页面

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			#box div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				display: none;
+			}
+			.yellow {
+				background: yellow;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<div v-for="item in list" 
+				:class="{yellow: item.select}"
+			>
+				<input type="checkbox" v-model="item.select" />
+				<span>{{item.title}}</span>
+			</div>
+			<hr>
+			<input type="checkbox" v-model='isCheckedAll' /> 全选
+		</div>
+		<script>
+			
+			// 不要在模板中写过多逻辑，保持模板简洁
+			// 把逻辑抽离计算属性中、抽离在methods
+
+			let data = [
+				{
+					id:1,
+					title: 'hello',
+					select: true
+				},
+				{
+					id:2,
+					title: 'hello123',
+					select: true
+				}
+			]
+
+			new Vue({
+				el: '#app',
+				data: {
+					list: data
+				},
+				computed:{
+					isCheckedAll:{
+						get(){
+								return this.list.every(item => item.select)
+							},
+						set(newValue){
+							this.list.forEach(item => item.select = newValue);
+						}
+					}
+				}
+			})
+
+
+		</script>
+	</body>
+</html>

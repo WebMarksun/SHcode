@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app">
+			<h1>启动项目</h1>
+
+			<input @keyup.13.ctrl="add" />
+
+		</div>
+		<script>
+			var message = 'hello,vue';
+			/*
+				语法： 
+					v-on:事件名.事件修饰.事件修饰符 = '方法'
+
+				self 修饰符只能点击绑定事件的元素才会触发
+					当点击这里面子孙级元素，是不触发的
+
+				按键修饰符，可以写键值
+
+				// https://cn.vuejs.org/v2/guide/events.html
+			*/
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					m: message
+				},
+				methods: {
+					add(ev){
+						/*if(ev.keyCode === 13){
+							console.log( ev.target.value );
+						}*/
+
+						console.log( ev.target.value );
+						
+					}
+
+				}
+			});
+
+		</script>
+	</body>
+</html>

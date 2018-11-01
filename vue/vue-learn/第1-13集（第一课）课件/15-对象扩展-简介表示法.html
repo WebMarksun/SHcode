@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			function tools(){
+				var a = 10;
+				var b = 20;
+				var c = 30;
+				// 对象中的key值和变量名相同，简写写成变量名就可以
+				return {
+					a:a,
+					b,  // b: b
+					c // c: c
+				}	
+			}
+
+			console.log( tools() );
+
+			let o = {
+				fn:function (){
+						
+				},
+				f: function (){
+						
+				},
+				miaov(){  // 相当于是 miaog:function(){}
+
+				}
+			}
+
+			console.log(o);
+
+			/*Vue({
+				methods: {
+					add(){
+						
+					}
+				}
+			})*/
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

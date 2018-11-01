@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script type="text/miaov">
+			使用var
+				1. 变量提升
+				2. 同一个作用域下会重复声明多个相同名的变量
+				3. 挂载window上
+			使用let
+				1. 不会 变量提升
+				2. 不会 同一个作用域下会重复声明多个相同名的变量
+				3. 不会 挂载window上
+
+			使用const
+				特性同let
+				声明变量，变量存的值不可能改
+		</script>
+		<script>
+			
+			
+
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+		<script>
+			// ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构
+
+
+			var tools = {
+				add:function (){
+						
+				},
+				isFunction: function (params){
+					console.log(params);	
+				},
+
+				isArray:function (){
+						
+				},
+				isMiaov:function (){
+						
+				},
+				a: 'leo'
+			}
+
+			/*tools.isFunction()
+			tools.isArray()*/
+
+			// isMiaov在结构赋值中由于对象中是不在属性名为isMiaov的，所有只是声明变量未赋值
+			// 设置默认值 isMiaov = 123
+			// 设置别名,原来的取值的和属性名一致的名字，不可用  如a:a="miaov"
+			let {isFunction,isArray,isMiaov=123,a:name='miaov'} = tools;
+
+			isFunction(1);
+
+			console.log(isMiaov);
+			console.log(name);
+
+			let [a,b,c,d] = 'miaovketang'
+			console.log(a,b,c,d);
+			
+		</script>
+	</body>
+</html>

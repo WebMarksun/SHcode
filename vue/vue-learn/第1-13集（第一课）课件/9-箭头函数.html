@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// function 声明函数
+			// 使用 =>
+			// 语法： let f = () => 函数体
+			// 没有形参
+			let f = () => 1;
+			// 有一个形参
+			let f2 = a => a + 1;
+			// 有2个形参
+			let f3 = (a,b) => a + b;
+
+			// 函数体，不写大括号，不写return，后面就是函数的返回值
+
+			let f4 = (a,b) => {
+				if(a < 10) {
+
+				}
+
+				return a + b;
+			}
+
+			let f5 = (a,b) => ({a:a,b:b})
+
+			console.log(f());
+			console.log(f2(10));
+			console.log(f3(10,10));
+			console.log(f4(11,10));
+			console.log(f5(11,10));
+
+
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>123</li>
+			<li>123</li>
+			<li>123</li>
+		</ul>
+	</body>
+</html>

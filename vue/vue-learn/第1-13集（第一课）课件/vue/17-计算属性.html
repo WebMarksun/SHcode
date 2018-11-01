@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			.red {
+				background: red;
+			}
+			.rontSize {
+				font-size: 50px;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<input type="text" v-model="message" />
+			<p>{{message.split('').reverse().join('')}}</p>
+			<p>{{message.split('').reverse().join('')}}</p>
+			<p>{{message.split('').reverse().join('')}}</p>
+			<p>{{message.split('').reverse().join('')}}</p>
+			<p>{{message.split('').reverse().join('')}}</p>
+			<hr>
+			<h3>测试计算属性</h3>
+			<p>{{reverseMessage}}</p>
+			<p>{{reverseMessage}}</p>
+			<p>{{reverseMessage}}</p>
+			<p>{{reverseMessage}}</p>
+			<p>{{reverseMessage}}</p>
+			<p>{{reverseMessage}}</p>
+			<h3>测试methods</h3>
+			<p>{{messageMethod()}}</p>
+			<p>{{messageMethod()}}</p>
+			<p>{{messageMethod()}}</p>
+			<p>{{messageMethod()}}</p>
+			<p>{{messageMethod()}}</p>
+			<p>{{messageMethod()}}</p>
+			<h3>测试methods</h3>
+			<ul>
+				<li 
+					v-for="item,index in list"
+					:style="styleMethod(index)"
+				>{{item}}</li>
+			</ul>
+		</div>
+		<script>
+			let message = 'hello,vue';
+			/*
+				1. 过多逻辑不要放在模板中
+				2. 有些值只需要记录一次，重复使用
+				3. 每当数据对象中的值发生变化，逻辑走一次重新的到新值
+
+				计算属性 computed
+
+				根据一个数据对象计算出来一个值，这个值用了多了多次，最好是放在计算属性中
+
+				每一次都需要产生一个新的值，放在methods中了
+			*/
+			
+			let vm = new Vue({
+				el: '#app',
+				data: {  
+					message,
+					list:[1,2,3,4,5,6]
+				},
+				computed: { // 定义在计算属性中的属性，都会放在实例上
+					// 属性的是通过对应函数的返回值得到
+					// 计算属性中的this都指向实例
+					// 计算一次，缓存值，之后多次使用
+					// 计算依赖数据对象中的属性，属性发生变化，计算属性的值重新计算
+					reverseMessage(){
+						console.log('执行了一次');
+
+						return this.message.split('').reverse().join('');
+					}
+				},
+				methods: {
+					messageMethod(){
+						console.log('执行了');
+						return this.message.split('').reverse().join('');
+					},
+					styleMethod(i){
+						if(i % 2 === 0){ // 奇数行
+							return {
+								color: 'red'
+							}
+						}else{
+							return {
+								color: 'yellow'
+							}
+						}
+					}
+				}
+			})
+
+			console.log(vm);
+
+		</script>
+	</body>
+</html>

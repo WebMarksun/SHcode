@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+		<script type="text/x-template" id="news-template">
+			<div>
+				<h2>{{title}}<span>X</span></h2>
+				<list></list>
+			</div>
+		</script>
+	</head>
+
+	<body>
+
+		<div id="app">
+			<news title="体育"></news>
+			<hr />
+			<custom></custom>
+		</div>
+
+		<script>
+			/*
+				自身数据
+				外部定制的数据
+
+
+				data必须是函数，在函数内部返回一个对象，确保这个对象只在这个组件中使用
+
+				以下这个例子是示例，说明多个组件使用同一个对象会出现的问题，当一个组件内部改变了数据，应该只会影响组件内部的数据，不能影响其他组件的数据。
+			*/
+			var data = {
+				message: 'hello，我是news组件'
+			}
+			Vue.component('news',{
+				props: ['title'],
+				data(){
+					return {
+						message: 'hello，我是news组件'
+					}
+				},
+				template: `
+					<div>
+						<p>外部定制的数据: {{title}}</p>
+						<button @click="message=123">改变自己的数据message</button>
+						<p>内部的数据: {{message}}</p>
+					</div>
+				`
+			})
+
+			Vue.component('custom',{
+				data(){
+					return {
+						message: 'hello，我是news组件'
+					}
+				},
+				template: `
+					<div>
+						{{message}}
+					</div>
+				`
+			})
+
+
+			var vm = new Vue({
+				//el: '#app',
+				data:{
+					m: 'hello',
+					list: [1,2,3,4,5,6,7],
+					list2: ['a','b','c']
+				}
+			})
+
+			vm.$mount('#app')
+		</script>
+		
+	</body>
+</html>

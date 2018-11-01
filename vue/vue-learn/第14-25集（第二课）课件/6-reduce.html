@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+
+			// 数组中的数字累加
+
+			/*var n = 0;
+			for( var i = 0; i < arr.length; i++ ){
+				n += arr[i];
+			}
+
+			console.log(n);*/
+			/*
+				数组.reduce(callback[,初始值])
+
+					callback会接受两个参数
+						item1 item2
+
+						没给reduce写初始值，callback会默认第一次接受数组中的前两个值
+
+
+			*/
+			var arr = [{
+				age: 30,
+				height: 180
+			},{
+				age: 30,
+				height: 180
+			},{
+				age: 30,
+				height: 180
+			},{
+				age: 30,
+				height: 180
+			}];
+			var n = arr.reduce(function (item1,item2){
+				console.log(item1,item2);
+				return {
+					age: item1.age + item2.age,
+					height: item1.height + item2.height
+				}
+			},{
+				age: 0,
+				height: 1000
+			})
+
+			console.log(n);
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

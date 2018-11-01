@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<!--
+				文本插值
+					{{表达式}}
+				使用双大括号（“Mustache”语法）做文本插值
+					可以写任意表达式
+						属性名、条件运算符、数据方法调用
+
+			-->
+			<p>{{m}}</p>	
+			<p>{{1+1}}</p>	
+			<p>{{[1,2,3].map(item => item * 3)}}</p>	
+		</div>
+		<script>
+			let message = 'hello,vue';
+
+			// 全局的Vue函数
+			// 启动  new Vue(选项对象)
+			// 选项对象目的就是告诉Vue做什么事情
+			new Vue({
+				//el: document.getElementById('#app')// element || selector
+				el: '#app',
+				data: {  // 数据对象，将来可以使用在模板中
+					m: message  // 对象中的key值直接在模板中使用
+				}
+			})
+
+		</script>
+	</body>
+</html>

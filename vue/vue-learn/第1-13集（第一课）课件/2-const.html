@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script type="text/miaov">
+			使用var
+				1. 变量提升
+				2. 同一个作用域下会重复声明多个相同名的变量
+				3. 挂载window上
+			使用let
+				1. 不会 变量提升
+				2. 不会 同一个作用域下会重复声明多个相同名的变量
+				3. 不会 挂载window上
+		</script>
+		<script>
+			// const 声明常量 一旦定义给了变量，变量存的值不能变
+			let a = 30;
+
+			a = 'miaov';
+
+			var VALUE = 'leo'; // 约定，变量的值不可改，不能重新赋值
+			VALUE = 10;
+			console.log(VALUE);
+
+			const hello = 'leo';
+			hello = 'hi'; // Uncaught TypeError: Assignment to constant variable.
+
+			console.log(hello);
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

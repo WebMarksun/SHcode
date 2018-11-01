@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+		
+	<body>
+		<div id="app"></div>
+		<script>
+
+			var message = 'hello,vue';
+			// 根实例 没有写el，只是构建实例，并没有挂载模板上
+			var vm = new Vue({
+				data: {
+					m: message
+				},
+				template: `
+					<div>
+						<h1>我是模板内容</h1>
+						{{m}}
+					</div>
+				`
+			});
+
+			// 结合模板
+			setTimeout(function (){
+				vm.$mount('#app')	
+			},1000)
+
+		</script>
+	</body>
+</html>

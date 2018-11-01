@@ -5,5 +5,9 @@ const db = mysql.createPool({host:common.dbhost,
     database:dbdatabase});
 module.exports = ()=>{
     var router = express.Router();
-    
+    router.post('/',(req,res)=>{
+        let username = req.body.username;
+        let password = common.md5(req.body.password+common.MD5_SUFFIX);
+        db.query('')
+    })
 }

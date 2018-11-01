@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				forEach
+				map
+				filter
+			*/
+
+			let arr = [
+				{
+					name:'leo1',
+					age:30
+				},
+				{
+					name:'leo2',
+					age:40
+				},
+				{
+					name:'leo1',
+					age:20
+				},
+				{
+					name:'leo2',
+					age:60
+				}
+			];
+			let newArr = arr.filter((item,index)=>item.age>20)
+
+			// let newArr = arr.filter(function (item){
+			// 	return item.age > 20	
+			// })
+
+			console.log(newArr);
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

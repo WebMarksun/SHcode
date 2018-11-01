@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		<!--是Vue的模板-->
+		<div id="app">
+			<h1>学习vue</h1>
+			<p v-bind:miaov='m'>{{m}}</p>
+		</div>
+		<script>
+			
+			// 响应式的数据绑定
+			/*
+				定义在data中的数据都是响应的了
+				一旦数据发生变化，界面会更新到合理的状态
+
+				理解css中的响应式布局，当浏览器尺寸发生变化，页面重新布局
+
+				v-bind指令的值也是响应的
+
+			*/
+			
+			let vm = new Vue({
+				el: '#app',
+				data:{ // 数据对象上的属性，都会放在实例上
+					m: 'hello'  // 定义在data中的数据都是响应的了
+				}
+			});
+
+			console.log(vm.m);
+
+		</script>
+	</body>
+</html>

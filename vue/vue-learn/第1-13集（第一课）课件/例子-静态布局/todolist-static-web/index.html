@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>todos</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <section class="todoapp">
+        <div>
+            <header class="header" >
+                <h1>todos</h1>
+                <input class="new-todo" placeholder="请输入内容" />
+            </header>
+            <section class="main">
+                <input class="toggle-all" type="checkbox" />
+                <ul class="todo-list">
+                    <li class="completed editing">
+                        <div class="view">
+                            <input class="toggle" type="checkbox" />
+                            <label>miaoweiketang</label>
+                            <button class="destroy"></button>
+                        </div>
+                        <input class="edit" />
+                    </li>
+                    <li class="">
+                        <div class="view">
+                            <input class="toggle" type="checkbox" />
+                            <label>miaoweiketang</label>
+                            <button class="destroy"></button>
+                        </div>
+                        <input class="edit" />
+                    </li>
+                    <li class="completed">
+                        <div class="view">
+                            <input class="toggle" type="checkbox" />
+                            <label>miaoweiketang</label>
+                            <button class="destroy"></button>
+                        </div>
+                        <input class="edit" />
+                    </li>
+                </ul>
+            </section>
+            <footer class="footer">
+	            <span class="todo-count">
+	            	<strong>0</strong>
+	            	<span>条未选中</span>
+	            </span>
+	            <ul class="filters">
+	            	<li><a href="#/all" class="selected">All</a></li> 
+	            	<li><a href="#/active" class="">Active</a></li> 
+	            	<li><a href="#/completed" class="">Completed</a></li>
+	           	</ul>
+            </footer>
+        </div>
+    </section>
+</body>
+<script>
+	/*
+		1. 增删改查数据，要使用localStorage做数据持久化
+		2. 根据hash不同，过滤渲染的数据
+			a. 全部任务
+			b. 完成的任务
+			c. 未完成的任务
+		3. 自己设计数据结构
+			
+	*/
+    // let data = [
+    //     {
+    //         id:1,
+    //         title: 'hello',
+    //         select: true
+    //     },
+    //     {
+    //         id:2,
+    //         title: 'hello123',
+    //         select: true
+    //     }
+    // ]
+    var optionsRowsCopy= [
+        {
+            "voteID": 50,
+            "optionID": 38,
+            "optionNo": 1,
+            "optionCount": 102,
+            "optionTitle": "标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325943118751004.png",
+            "optionContent": "<p>dsdfsd</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 41,
+            "optionNo": 2,
+            "optionCount": 101,
+            "optionTitle": "标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2标题2",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325943472431005.jpg",
+            "optionContent": "<p>555</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 42,
+            "optionNo": 3,
+            "optionCount": 101,
+            "optionTitle": "标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325944742781006.jpg",
+            "optionContent": "<p>标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3标题3</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 43,
+            "optionNo": 4,
+            "optionCount": 101,
+            "optionTitle": "标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325945471191007.png",
+            "optionContent": "<p>标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4标题4</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 45,
+            "optionNo": 6,
+            "optionCount": 101,
+            "optionTitle": "标题6标题6标题6",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325946484211009.png",
+            "optionContent": "<p>标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 46,
+            "optionNo": 7,
+            "optionCount": 100,
+            "optionTitle": "标题7",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325947740811010.png",
+            "optionContent": "<p>标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 47,
+            "optionNo": 8,
+            "optionCount": 100,
+            "optionTitle": "标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325948224811011.png",
+            "optionContent": "<p>标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7标题7</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 48,
+            "optionNo": 9,
+            "optionCount": 100,
+            "optionTitle": "标题9",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325948946801012.jpg",
+            "optionContent": "<p>标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9标题9</p>"
+        },
+        {
+            "voteID": 50,
+            "optionID": 49,
+            "optionNo": 10,
+            "optionCount": 101,
+            "optionTitle": "标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10",
+            "optionImg": "http://dev-file.aimingtai.com/webdata/45/images/2018/0726/15325952256901014.jpg",
+            "optionContent": "<p>标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10标题10</p>"
+        }
+    ]
+
+
+
+            var arr = [];
+            console.log(arr)
+
+            for (var i in optionsRowsCopy) {
+                if (optionsRowsCopy[i].optionTitle.indexOf('3') != -1) {
+                    console.log(arr.length)
+                    arr.push(optionsRowsCopy[i]);
+                    console.log(i)
+                    console.log(optionsRowsCopy[i])
+                    console.log(arr);
+                    console.log(arr.length)
+                }
+            }
+            console.log('biaoti')
+            console.log(arr);
+            for (var i in optionsRowsCopy) {
+                console.log((optionsRowsCopy[i].optionNo + '').indexOf('3'))
+                if ((optionsRowsCopy[i].optionNo + '').indexOf('3') != -1) {
+                    if (arr.length) {
+                        for (var j in arr) {
+                            console.log(optionsRowsCopy[j])
+                            console.log(arr[j])
+                            if (optionsRowsCopy[i].optionNo != arr[j].optionNo) {
+                                arr.push(optionsRowsCopy[i]);
+                            }
+                        }
+                        console.log('length')
+                    } else {
+                        arr.push(optionsRowsCopy[i]);
+                        console.log('nolength')
+                    }
+                }
+            }
+            // optionsRows = sortAsOptionNo(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
